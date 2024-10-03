@@ -2,7 +2,7 @@ export default function Home()
 {
     return (
         <div>
-            Portál důchodce
+            Ahoj světe
         </div>
     );
 }
