@@ -8,8 +8,8 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "Portál důchodce",
-    description: "Portál důchodce",
+    title: "Portál seniora",
+    description: "Portál seniora",
 };
 
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
@@ -18,7 +18,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
             <body className={inter.className}>
                 <Navbar>
                     <NavbarBrand>
-                        <p className="font-bold text-inherit">Portál důchodce</p>
+                        <p className="font-bold text-inherit">Portál seniora</p>
                     </NavbarBrand>
                     <NavbarContent className="hidden sm:flex gap-4" justify="center">
                         <NavbarItem isActive>
