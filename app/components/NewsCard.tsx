@@ -4,15 +4,17 @@ import { Image } from "@nextui-org/react";
 
 interface NewsCardProps {
     imgSrc: string;
+    title: string,
+    description: string
 }
 
-export default function NewsCard({ imgSrc }: NewsCardProps) {
+export default function NewsCard({ imgSrc, title, description }: NewsCardProps) {
     return (
         <Card>
             <Image src={imgSrc}></Image>
             <CardFooter className="flex flex-col items-start text-black">
-                <h2 className="font-bold text-lg">Lorem ipsum</h2>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec ipsum massa, ullamcorper in.</p>
+                <h2 className="font-bold text-lg">{title}</h2>
+                <p>{description}</p>
             </CardFooter>
         </Card>
     )
