@@ -1,4 +1,3 @@
-import { Card, CardBody, CardFooter } from "@nextui-org/react";
 import NewsCard from "./components/NewsCard";
 import ActivityCard from "./components/ActivityCard";
 

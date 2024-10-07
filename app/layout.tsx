@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
 import { Providers } from "./providers";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Button } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react";
 
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
