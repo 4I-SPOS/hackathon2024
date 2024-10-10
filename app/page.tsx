@@ -1,7 +1,11 @@
 import NewsCard from "./components/NewsCard";
 import ActivityCard from "./components/ActivityCard";
+import { getArchitektonickePamatky } from "./firebase";
 
-export default function Home() {
+export default async function Home() {
+
+    const pamatky = await getArchitektonickePamatky();
+
     return (
         <div className="p-10">
             <div className="flex gap-6">
