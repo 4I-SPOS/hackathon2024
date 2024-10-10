@@ -59,6 +59,19 @@ export interface IArchitektonickaPamatka extends DocumentData
     zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
 }
 
+export interface ICyklovylety extends DocumentData{
+    delka_cyklovyletu_v_metrech: string;
+    id: string;
+    jedinecny_identifikator_v_datovem_skladu_turistickeho_portalu_khk: string;
+    jedinecny_identifikator_v_katalogu_otevrenych_dat_data_khk: string;
+    kod_vyssiho_uzemniho_samospravneho_celku: string;
+    nazev: string;
+    nazev_vyssiho_uzemniho_samospravneho_celku: string;
+    popis: string;
+    telefon: string;
+    webove_stranky: string;
+}
+
 export const getArchitektonickePamatky = async () => {
     try {
         const pamatkyCollection = collection(db, 'architektonicke_pamatky');
@@ -70,7 +83,23 @@ export const getArchitektonickePamatky = async () => {
 
         return architektonickePamatky;
     } catch (error) {
-        console.error("Error fetching architektonické památky: ", error);
+        console.error("Error fetching (architektonicke_pamatky): ", error);
+        throw error;
+    }
+};
+
+export const getCyklovylety = async () => {
+    try {
+        const cyklovyletyCollection = collection(db, 'cyklovylety');
+        const querySnapshot = await getDocs(cyklovyletyCollection);
+
+        const cyklovyletyPamatky = querySnapshot.docs.map(doc =>
+            doc.data() as ICyklovylety
+        );
+
+        return cyklovyletyPamatky;
+    } catch (error) {
+        console.error("Error fetching (cyklovylety): ", error);
         throw error;
     }
 };
