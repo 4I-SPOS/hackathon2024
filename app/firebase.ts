@@ -21,8 +21,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 
-export function converter<T extends DocumentData>()
-{
+export function converter<T extends DocumentData>() {
     return {
         toFirestore(data: T): DocumentData {
             return data;
@@ -32,8 +31,7 @@ export function converter<T extends DocumentData>()
         },
     };
 }
-export interface IArchitektonickaPamatka extends DocumentData
-{
+export interface IArchitektonickaPamatka extends DocumentData {
     cislo_orientacni: string;
     cislo_popisne_nebo_evidencni_podle_typu_cisla_domovniho: string;
     jedinecny_identifikator_v_datovem_skladu_turistickeho_portalu_khk: string;
@@ -59,7 +57,7 @@ export interface IArchitektonickaPamatka extends DocumentData
     zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
 }
 
-export interface ICyklovylety extends DocumentData{
+export interface ICyklovylety extends DocumentData {
     delka_cyklovyletu_v_metrech: string;
     id: string;
     jedinecny_identifikator_v_datovem_skladu_turistickeho_portalu_khk: string;
@@ -71,6 +69,55 @@ export interface ICyklovylety extends DocumentData{
     telefon: string;
     webove_stranky: string;
 }
+
+export interface IHrady extends DocumentData {
+    jedinecny_identifikator_v_katalogu_otevrenych_dat_data_khk: string;
+    kod_obce_dle_ciselniku_csu: string;
+    kod_okresu_dle_ciselniku_csu: string;
+    kod_spravniho_obvodu_obce_s_rozsirenou_pusobnosti_dle_ciselniku_csu: string;
+    kod_vyssiho_uzemniho_samospravneho_celku_dle_ciselniku_csu: string;
+    nazev: string;
+    nazev_obce: string;
+    nazev_okresu: string;
+    nazev_spravniho_obvodu_obce_s_rozsirenou_pusobnosti: string;
+    nazev_ulice: string;
+    nazev_vyssiho_uzemniho_samospravneho_celku: string;
+    popis: string;
+    psc: string;
+    telefon: string;
+    typ_cisla_domovniho: string;
+    webove_stranky: string;
+    zapis_vektorove_geometrie: string;
+    zemepisna_delka_v_souradnicovem_systemu_wgs84: string;
+    zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
+}
+
+export interface IInfocentra extends DocumentData {
+    cislo_orientacni: string;
+    cislo_popisne_nebo_evidencni_podle_typu_cisla_domovniho: string;
+    id: string;
+    jedinecny_identifikator_v_datovem_skladu_turistickeho_portalu_khk: string;
+    jedinecny_identifikator_v_katalogu_otevrenych_dat_data_khk: string;
+    kod_obce_dle_ciselniku_csu: string;
+    kod_okresu_dle_ciselniku_csu: string;
+    kod_spravniho_obvodu_obce_s_rozsirenou_pusobnosti_dle_ciselniku_csu: string;
+    kod_vyssiho_uzemniho_samospravneho_celku_dle_ciselniku_csu: string;
+    nazev: string;
+    nazev_obce: string;
+    nazev_okresu: string;
+    nazev_spravniho_obvodu_obce_s_rozsirenou_pusobnosti: string;
+    nazev_ulice: string;
+    nazev_vyssiho_uzemniho_samospravneho_celku: string;
+    popis: string;
+    psc: string;
+    telefon: string;
+    typ_cisla_domovniho: string;
+    webove_stranky: string;
+    zapis_vektorove_geometrie: string;
+    zemepisna_delka_v_souradnicovem_systemu_wgs84: string;
+    zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
+}
+
 
 export const getArchitektonickePamatky = async () => {
     try {
@@ -93,13 +140,45 @@ export const getCyklovylety = async () => {
         const cyklovyletyCollection = collection(db, 'cyklovylety');
         const querySnapshot = await getDocs(cyklovyletyCollection);
 
-        const cyklovyletyPamatky = querySnapshot.docs.map(doc =>
+        const cyklovylety = querySnapshot.docs.map(doc =>
             doc.data() as ICyklovylety
         );
 
-        return cyklovyletyPamatky;
+        return cyklovylety;
     } catch (error) {
         console.error("Error fetching (cyklovylety): ", error);
+        throw error;
+    }
+};
+
+export const getHrady = async () => {
+    try {
+        const hradyCollection = collection(db, 'hrady');
+        const querySnapshot = await getDocs(hradyCollection);
+
+        const hrady = querySnapshot.docs.map(doc =>
+            doc.data() as IHrady
+        );
+
+        return hrady;
+    } catch (error) {
+        console.error("Error fetching (hrady): ", error);
+        throw error;
+    }
+};
+
+export const getInfocentra = async () => {
+    try {
+        const infocentraCollection = collection(db, 'hrady');
+        const querySnapshot = await getDocs(infocentraCollection);
+
+        const infocentra = querySnapshot.docs.map(doc =>
+            doc.data() as IInfocentra
+        );
+
+        return infocentra;
+    } catch (error) {
+        console.error("Error fetching (infocentra): ", error);
         throw error;
     }
 };
