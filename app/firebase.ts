@@ -37,6 +37,26 @@ export interface IArchitektonickaPamatka extends DocumentData
     cislo_orientacni: string;
     cislo_popisne_nebo_evidencni_podle_typu_cisla_domovniho: string;
     jedinecny_identifikator_v_datovem_skladu_turistickeho_portalu_khk: string;
+    jedinecny_identifikator_v_katalogu_otevrenych_dat_data_khk: string;
+    kod_obce_dle_ciselniku_csu: string;
+    kod_okresu_dle_ciselniku_csu: string;
+    kod_spravniho_obvodu_obce_s_rozsirenou_pusobnosti_dle_ciselniku_csu: string;
+    kod_vyssiho_uzemniho_samospravneho_celku_dle_ciselniku_csu: string;
+    nazev: string;
+    nazev_obce: string;
+    nazev_okresu: string;
+    nazev_spravniho_obvodu_obce_s_rozsirenou_pusobnosti: string;
+    nazev_ulice: string;
+    nazev_vyssiho_uzemniho_samospravneho_celku: string;
+    objectid: string;
+    popis: string;
+    psc: string;
+    telefon: string;
+    typ_cisla_domovniho: string;
+    webove_stranky: string;
+    zapis_vektorove_geometrie: string;
+    zemepisna_delka_v_souradnicovem_systemu_wgs84: string;
+    zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
 }
 
 export const getArchitektonickePamatky = async () => {
@@ -44,7 +64,6 @@ export const getArchitektonickePamatky = async () => {
         const pamatkyCollection = collection(db, 'architektonicke_pamatky');
         const querySnapshot = await getDocs(pamatkyCollection);
 
-        // Convert documents to IArchitektonickaPamatka using the converter
         const architektonickePamatky = querySnapshot.docs.map(doc =>
             doc.data() as IArchitektonickaPamatka
         );
