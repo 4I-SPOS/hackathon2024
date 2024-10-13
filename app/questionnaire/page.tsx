@@ -46,7 +46,8 @@ export default function Home()
 
     const GetRecommendedActivity = () =>
     {
-        const recommendedActivities = activities.sort((a, b) => b.score - a.score);
+        let recommendedActivities = activities.sort((a, b) => b.score - a.score);
+        recommendedActivities = recommendedActivities.filter(a => a.score > 1.5); //tohle se pak bude delat dynamicky (nejlepsi match & -x score)
         setTimeout(() => //pouze pro debuggovani - zavolani alert normalne zablokuje thread a zastavovalo tak animace - to me stvalo
         {
             alert(recommendedActivities.map(a => `${a.name} - ${a.score}`).join(", "));
