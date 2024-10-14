@@ -12,7 +12,7 @@ type Question =
 };
 type AnswerScore =
 {
-    id: string;
+    id: Activities;
     score_increase: number;
 }
 type Answer =
@@ -24,19 +24,25 @@ type Answer =
 type Activity =
 {
     name: string;
-    id: string;
+    id: Activities;
     score: number;
 }
+enum Activities
+{
+    Cyklistika,
+    Turistika,
+    Kluby
+}
 const allActivities: Activity[] = [
-    { name: "Cyklistika", id: "cyklo", score: 0 },
-    { name: "Turistika", id: "turistika", score: 0 },
-    { name: "Kluby", id: "kluby", score: 0 }
+    { name: "Cyklistika", id: Activities.Cyklistika, score: 0 },
+    { name: "Turistika", id: Activities.Turistika, score: 0 },
+    { name: "Kluby", id: Activities.Kluby, score: 0 }
 ]
 
 const questions: Question[] = [
-    { question: "Radši trávíte čas", firstAnswer: { answer: "V přírodě", scores: [ { id: "cyklo", score_increase: 1 } ] }, secondAnswer: { answer: "Vevnitř", scores: [ { id: "kluby", score_increase: 1 } ] } },
-    { question: "Máte radši", firstAnswer: { answer: "Hory", scores: [ { id: "turistika", score_increase: 2 }, { id: "cyklo", score_increase: 0.5 } ] }, secondAnswer: { answer: "Moře", scores: [ { id: "cyklo", score_increase: 1 } ] } },
-    { question: "Pijete rádi alkohol?", firstAnswer: { answer: "Ano", scores: [ { id: "kluby", score_increase: 2 } ] }, secondAnswer: { answer: "Ne", scores: [ ] } }
+    { question: "Radši trávíte čas", firstAnswer: { answer: "V přírodě", scores: [ { id: Activities.Cyklistika, score_increase: 1 } ] }, secondAnswer: { answer: "Vevnitř", scores: [ { id: Activities.Kluby, score_increase: 1 } ] } },
+    { question: "Máte radši", firstAnswer: { answer: "Hory", scores: [ { id: Activities.Turistika, score_increase: 2 }, { id: Activities.Cyklistika, score_increase: 0.5 } ] }, secondAnswer: { answer: "Moře", scores: [ { id: Activities.Cyklistika, score_increase: 1 } ] } },
+    { question: "Pijete rádi alkohol?", firstAnswer: { answer: "Ano", scores: [ { id: Activities.Kluby, score_increase: 2 } ] }, secondAnswer: { answer: "Ne", scores: [ ] } }
 ]
 
 export default function Home()
