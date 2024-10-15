@@ -3,6 +3,7 @@
 import {Card} from "@nextui-org/react";
 import {CardBody} from "@nextui-org/card";
 import {useState} from "react";
+import ActivityCard from "../components/ActivityCard";
 
 type Question =
 {
@@ -46,9 +47,9 @@ const allActivities: Activity[] = [
     { id: Activities.Rybareni, score: 0 }
 ]
 
-function determineActivityByID(id: number): string
+function determineActivityByID(activity: Activities): string
 {
-    switch (id)
+    switch (activity)
     {
         case Activities.Cyklistika:
             return "Cyklistika";
@@ -59,13 +60,11 @@ function determineActivityByID(id: number): string
         case Activities.Wellness:
             return "Wellness";
         case Activities.Pamatky:
-            return "Pamatky";
+            return "Památky";
         case Activities.Pivovary:
             return "Pivovary";
         case Activities.Rybareni:
-            return "Rybareni";
-        default:
-            return "???"
+            return "Rybaření";
     }
 }
 
@@ -129,19 +128,70 @@ const questions: Question[] = [
                 ] } }
 ]
 
+type ActivityCard =
+{
+    title: string;
+    image: string;
+    description: string;
+    link: string;
+}
+function GetActivityCard(activity: Activities) : ActivityCard[]
+{
+    switch (activity)
+    {
+        case Activities.Cyklistika:
+            return [
+                    { title: "Cyklovýlety", image: "https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true",  description: "/", link: "/" }
+                ];
+        case Activities.Turistika:
+            return [
+                { title: "Rozhledny a vyhlídky", image: "https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true",  description: "/", link: "/" }
+            ];
+        case Activities.Kultura:
+            return [
+                { title: "Kina", image: "https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true",  description: "/", link: "/" },
+                { title: "Kulturní domy", image: "https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true",  description: "/", link: "/" },
+                { title: "Muzea a galerie", image: "https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true",  description: "/", link: "/" }
+            ];
+        case Activities.Wellness:
+            return [
+                { title: "Lázně", image: "https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true",  description: "/", link: "/" },
+                { title: "Solné jeskyně", image: "https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true",  description: "/", link: "/" }
+            ];
+        case Activities.Pamatky:
+            return [
+                { title: "Architektonické památky", image: "https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true",  description: "/", link: "/" },
+                { title: "Hrady", image: "https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true",  description: "/", link: "/" },
+                { title: "Muzea a galerie", image: "https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true",  description: "/", link: "/" },
+                { title: "Národní kulturní památky", image: "https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true",  description: "/", link: "/" },
+                { title: "Ostatní historické památky", image: "https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true",  description: "/", link: "/" },
+                { title: "Památkové rezervy", image: "https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true",  description: "/", link: "/" },
+                { title: "Technické památky", image: "https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true",  description: "/", link: "/" },
+                { title: "Válečné hroby ve vlastnictví kraje", image: "https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true",  description: "/", link: "/" },
+                { title: "Zámky", image: "https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true",  description: "/", link: "/" }
+            ];
+        case Activities.Pivovary:
+            return [
+                { title: "Pivovary", image: "https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true", description: "/", link: "/" }
+            ];
+        case Activities.Rybareni:
+            return [
+                { title: "Rybaření", image: "https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true", description: "/", link: "/" }
+            ];
+    }
+}
+
 export default function Home()
 {
     const [currentQuestionID, setCurrentQuestionID] = useState<number>(0);
     const [activities, setActivities] = useState<Activity[]>(allActivities);
+    const [answeredAll, setAnsweredAll] = useState<boolean>(false);
+    const [recommendedActivities, setRecommendedActivities] = useState<Activity[]>([]);
 
     const GetRecommendedActivity = () =>
     {
-        let recommendedActivities = activities.sort((a, b) => b.score - a.score);
-        recommendedActivities = recommendedActivities.filter(a => a.score > 1.5); //tohle se pak bude delat dynamicky (nejlepsi match & -x score)
-        setTimeout(() => //pouze pro debuggovani - zavolani alert normalne zablokuje thread a zastavovalo tak animace - to me stvalo
-        {
-            alert(recommendedActivities.map(a => `${determineActivityByID(a.id)} - ${a.score}`).join(", "));
-        }, 10);
+        setRecommendedActivities(activities.sort((a, b) => b.score - a.score).filter(a => a.score > 1.5)); //tohle se pak bude delat dynamicky (nejlepsi match & -x score)
+        setAnsweredAll(true);
     }
     const NextQuestion = () =>
     {
@@ -180,33 +230,62 @@ export default function Home()
         NextQuestion();
     }
 
-    return(
-        <div className="p-10 w-full h-full">
-            <div className="w-full h-max flex flex-col items-center justify-center">
-                <div className="text-5xl mb-8">
-                    { questions[currentQuestionID].question }
-                </div>
-                <div className="m-4 gap-10 flex flex-row flex-wrap items-center justify-between h-full">
-                    <div className="flex-auto h-80 w-80">
-                        <Card className="h-full" isPressable={true} fullWidth={true} onPress={SubmitFirstAnswer}>
-                            <CardBody className="text-3xl flex-wrap h-full w-full flex flex-row justify-center items-center align-middle">
-                                <span className="flex-1 text-center text-balance w-full p-2">
-                                    { questions[currentQuestionID].firstAnswer.answer }
-                                </span>
-                            </CardBody>
-                        </Card>
+    if (!answeredAll)
+    {
+        return(
+            <div className="p-10 w-full h-full">
+                <div className="w-full h-max flex flex-col items-center justify-center">
+                    <div className="text-5xl mb-8">
+                        { questions[currentQuestionID].question }
                     </div>
-                    <div className="flex-auto h-80 w-80">
-                        <Card className="h-full w-full" isPressable={true} fullWidth={true} onPress={SubmitSecondAnswer}>
-                            <CardBody className="text-3xl flex-wrap h-full w-full flex flex-row justify-center items-center align-middle">
-                                <span className="flex-1 text-center text-balance w-full p-2">
-                                    { questions[currentQuestionID].secondAnswer.answer }
-                                </span>
-                            </CardBody>
-                        </Card>
+                    <div className="m-4 gap-10 flex flex-row flex-wrap items-center justify-between h-full">
+                        <div className="flex-auto h-80 w-80">
+                            <Card className="h-full" isPressable={true} fullWidth={true} onPress={SubmitFirstAnswer}>
+                                <CardBody className="text-3xl flex-wrap h-full w-full flex flex-row justify-center items-center align-middle">
+                                    <span className="flex-1 text-center text-balance w-full p-2">
+                                        { questions[currentQuestionID].firstAnswer.answer }
+                                    </span>
+                                </CardBody>
+                            </Card>
+                        </div>
+                        <div className="flex-auto h-80 w-80">
+                            <Card className="h-full w-full" isPressable={true} fullWidth={true} onPress={SubmitSecondAnswer}>
+                                <CardBody className="text-3xl flex-wrap h-full w-full flex flex-row justify-center items-center align-middle">
+                                    <span className="flex-1 text-center text-balance w-full p-2">
+                                        { questions[currentQuestionID].secondAnswer.answer }
+                                    </span>
+                                </CardBody>
+                            </Card>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    )
+        )
+    }
+    else
+    {
+        return(
+            <div className="p-10 w-full h-full">
+                <div>
+                    Vaše výsledky
+                </div>
+                <div>
+                    {
+                        recommendedActivities.map((activity) => (
+                            <div key={activity.id}>
+                                <b>{determineActivityByID(activity.id)}</b>
+                                <div className="flex flex-row items-center flex-wrap gap-2">
+                                    {
+                                        GetActivityCard(activity.id).map((card) => (
+                                            <ActivityCard key={`${activity.id}_${card.title}`} title={card.title} imgSrc={card.image} />
+                                        ))
+                                    }
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        )
+    }
 }
