@@ -48,11 +48,6 @@ export default function Activity() {
                     <ActivityListItem />
                     <ActivityListItem />
                     <ActivityListItem />
-                    <ActivityListItem />
-                    <ActivityListItem />
-                    <ActivityListItem />
-                    <ActivityListItem />
-                    
                 </div>
             </div>
         </div>
