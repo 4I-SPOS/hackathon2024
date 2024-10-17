@@ -1,27 +1,16 @@
-"use client"
+"use client";
 
-import { useState } from "react";
-import { Checkbox } from "@nextui-org/react";
-
-interface IDatasetListItemProps {
+interface DatasetListItemProps {
   name: string;
   isChecked: boolean;
+  onClick: () => void;
 }
 
-export default function DatasetListItem({ name, isChecked }: IDatasetListItemProps) {
-  const [checked, setChecked] = useState(isChecked);
-
-  const handleDivClick = () => {
-    setChecked((prev) => !prev);
-  };
-
+export default function DatasetListItem({ name, isChecked, onClick }: DatasetListItemProps) {
   return (
-    <div
-      onClick={handleDivClick}
-      className="bg-white cursor-pointer flex justify-between outline outline-1 outline-neutral-300 rounded-lg pl-3 pr-1 py-2"
-    >
-      <p>{name}</p>
-      <Checkbox isSelected={checked} onClick={handleDivClick} />
+    <div onClick={onClick} className={`flex justify-between items-center cursor-pointer`}>
+      <span className="ml-2">{name}</span>
+      <input className="h-5 w-5 text-neutral-600 bg-neutral-200 border-2 border-neutral-300 rounded-md focus:ring-neutral-500 focus:ring-offset-0 appearance-none checked:bg-neutral-900 checked:border-black transition duration-150 ease-in-out" type="checkbox" checked={isChecked} readOnly />
     </div>
   );
 }

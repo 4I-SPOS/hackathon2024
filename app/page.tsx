@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import NewsCard from "./components/NewsCard";
-import ActivityCard from "./components/ActivityCard";
 import Link from "next/link";
 import { Button } from "@nextui-org/react";
 import Image from "next/image";
