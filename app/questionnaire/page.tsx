@@ -125,7 +125,15 @@ const questions: Question[] = [
                 [
                     { id: Activities.Turistika, score_increase: 1 },
                     { id: Activities.Cyklistika, score_increase: 0.5 }
-                ] } }
+                ] } },
+    { question: "Ochutnáváte rádi nové pivo?",
+        firstAnswer: { answer: "Ano", scores:
+                [
+                    { id: Activities.Pivovary, score_increase: 2 }
+                ] },
+        secondAnswer: { answer: "Ne", scores:
+                [
+                ] } },
 ]
 
 type ActivityCard =
@@ -233,29 +241,31 @@ export default function Home()
     if (!answeredAll)
     {
         return(
-            <div className="p-10 w-full h-full">
-                <div className="w-full h-max flex flex-col items-center justify-center">
-                    <div className="text-5xl mb-8">
+            <div className="p-10 w-full h-[90vh]">
+                <div className="w-full h-full flex flex-col items-center justify-start">
+                    <div className="text-5xl mb-8 flex flex-row justify-center justify-items-center">
                         { questions[currentQuestionID].question }
                     </div>
-                    <div className="m-4 gap-10 flex flex-row flex-wrap items-center justify-between h-full">
-                        <div className="flex-auto h-80 w-80">
-                            <Card className="h-full" isPressable={true} fullWidth={true} onPress={SubmitFirstAnswer}>
-                                <CardBody className="text-3xl flex-wrap h-full w-full flex flex-row justify-center items-center align-middle">
-                                    <span className="flex-1 text-center text-balance w-full p-2">
-                                        { questions[currentQuestionID].firstAnswer.answer }
-                                    </span>
-                                </CardBody>
-                            </Card>
-                        </div>
-                        <div className="flex-auto h-80 w-80">
-                            <Card className="h-full w-full" isPressable={true} fullWidth={true} onPress={SubmitSecondAnswer}>
-                                <CardBody className="text-3xl flex-wrap h-full w-full flex flex-row justify-center items-center align-middle">
-                                    <span className="flex-1 text-center text-balance w-full p-2">
-                                        { questions[currentQuestionID].secondAnswer.answer }
-                                    </span>
-                                </CardBody>
-                            </Card>
+                    <div className="h-full flex flex-col justify-center align-middle items-center">
+                        <div className="m-auto gap-10 flex flex-row flex-wrap items-center justify-between h-full">
+                            <div className="flex-auto h-80 w-80">
+                                <Card className="h-full transition hover:scale-[1.02] hover:drop-shadow-xl" isPressable={true} fullWidth={true} onPress={SubmitFirstAnswer}>
+                                    <CardBody className="text-3xl flex-wrap h-full w-full flex flex-row justify-center items-center align-middle">
+                                        <span className="flex-1 text-center text-balance w-full p-2">
+                                            { questions[currentQuestionID].firstAnswer.answer }
+                                        </span>
+                                    </CardBody>
+                                </Card>
+                            </div>
+                            <div className="flex-auto h-80 w-80">
+                                <Card className="h-full w-full transition hover:scale-[1.02] hover:drop-shadow-xl" isPressable={true} fullWidth={true} onPress={SubmitSecondAnswer}>
+                                    <CardBody className="text-3xl flex-wrap h-full w-full flex flex-row justify-center items-center align-middle">
+                                        <span className="flex-1 text-center text-balance w-full p-2">
+                                            { questions[currentQuestionID].secondAnswer.answer }
+                                        </span>
+                                    </CardBody>
+                                </Card>
+                            </div>
                         </div>
                     </div>
                 </div>
