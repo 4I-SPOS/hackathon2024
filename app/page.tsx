@@ -2,18 +2,11 @@
 
 import { useEffect, useState } from "react";
 import NewsCard from "./components/NewsCard";
-import ActivityCard from "./components/ActivityCard";
 import Link from "next/link";
 import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import bgSrc from "@/app/assets/home_bg.jpg";
-
-interface NewsItem {
-    title: string;
-    description: string;
-    imgSrc: string;
-    link: string;
-}
+import {NewsItem} from "@/app/news/page";
 
 export default function Home() {
     const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
