@@ -3,7 +3,7 @@
 import {Card} from "@nextui-org/react";
 import {CardBody} from "@nextui-org/card";
 import {useState} from "react";
-import ActivityCard from "../components/ActivityCard";
+import {redirect} from "next/navigation";
 
 type Question =
 {
@@ -47,7 +47,7 @@ const allActivities: Activity[] = [
     { id: Activities.Rybareni, score: 0 }
 ]
 
-function determineActivityByID(activity: Activities): string
+/*function determineActivityByID(activity: Activities): string
 {
     switch (activity)
     {
@@ -66,7 +66,7 @@ function determineActivityByID(activity: Activities): string
         case Activities.Rybareni:
             return "Rybaření";
     }
-}
+}*/
 
 const questions: Question[] = [
     { question: "Preferujete aktivní pohyb nebo relaxaci?",
@@ -136,7 +136,7 @@ const questions: Question[] = [
                 ] } },
 ]
 
-type ActivityCard =
+/*type ActivityCard =
 {
     title: string;
     image: string;
@@ -187,7 +187,7 @@ function GetActivityCard(activity: Activities) : ActivityCard[]
                 { title: "Rybaření", image: "https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true", description: "/", link: "/" }
             ];
     }
-}
+}*/
 
 export default function Home()
 {
@@ -274,28 +274,7 @@ export default function Home()
     }
     else
     {
-        return(
-            <div className="p-10 w-full h-full">
-                <div>
-                    Vaše výsledky
-                </div>
-                <div>
-                    {
-                        recommendedActivities.map((activity) => (
-                            <div key={activity.id}>
-                                <b>{determineActivityByID(activity.id)}</b>
-                                <div className="flex flex-row items-center flex-wrap gap-2">
-                                    {
-                                        GetActivityCard(activity.id).map((card) => (
-                                            <ActivityCard key={`${activity.id}_${card.title}`} title={card.title} imgSrc={card.image} />
-                                        ))
-                                    }
-                                </div>
-                            </div>
-                        ))
-                    }
-                </div>
-            </div>
-        )
+        const datasets = recommendedActivities.map(item => item.id).join(",");
+        redirect("/activity?sady=" + datasets);
     }
 }
