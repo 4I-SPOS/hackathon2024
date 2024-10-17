@@ -21,7 +21,7 @@ export default function DatasetListItem({ name, isChecked }: IDatasetListItemPro
       className="bg-white cursor-pointer flex justify-between outline outline-1 outline-neutral-300 rounded-lg pl-3 pr-1 py-2"
     >
       <p>{name}</p>
-      <Checkbox isSelected={checked} />
+      <Checkbox isSelected={checked} onClick={handleDivClick} />
     </div>
   );
 }
