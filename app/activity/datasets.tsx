@@ -21,7 +21,7 @@ enum Activities {
 
 export default function ActivityDatasets({ datoveSady }: ActivityDatasetsProps) {
     const [selectedDatasets, setSelectedDatasets] = useState<string[]>([]);
-    const [searchTerm, setSearchTerm] = useState<string>("");
+    const [searchTerm] = useState<string>("");
     const [parsedSearch, setParsedSearch] = useState<boolean>(false);
     const searchParams = useSearchParams()
 
@@ -30,13 +30,6 @@ export default function ActivityDatasets({ datoveSady }: ActivityDatasetsProps) 
     const setDatasetToggle = (datasetName: string) => {
         setSelectedDatasets((prev) =>
             [...prev, datasetName]
-        );
-    }
-    const setDatasetEnable = (datasetName: string) => {
-        setSelectedDatasets((prev) =>
-            prev.includes(datasetName)
-                ? prev.filter((name) => name !== datasetName)
-                : [...prev, datasetName]
         );
     }
 
