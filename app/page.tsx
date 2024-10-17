@@ -6,7 +6,13 @@ import Link from "next/link";
 import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import bgSrc from "@/app/assets/home_bg.jpg";
-import {NewsItem} from "@/app/news/page";
+
+interface NewsItem {
+    title: string;
+    description: string;
+    imgSrc: string;
+    link: string;
+}
 
 export default function Home() {
     const [newsItems, setNewsItems] = useState<NewsItem[]>([]);

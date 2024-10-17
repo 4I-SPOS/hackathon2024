@@ -91,9 +91,17 @@ function FilterItem({ name, checked, setChecked }: { name: string; checked: bool
     );
 }
 
-function combineArrays<T>(array1: T[], array2: T[]): T[] {
-    const combinedSet = new Set([...array1, ...array2]);
-    return Array.from(combinedSet);
+function mergeNewsItems(arr1: NewsItem[], arr2: NewsItem[]): NewsItem[] {
+    const mergedArray: NewsItem[] = [...arr1];
+
+    arr2.forEach(item => {
+        const isDuplicate = mergedArray.some(mergedItem => mergedItem.title === item.title);
+        if (!isDuplicate) {
+            mergedArray.push(item);
+        }
+    });
+
+    return mergedArray;
 }
 
 type ActivityFilter =
@@ -131,9 +139,11 @@ export default function Home()
                         continue;
 
                     const fetchedNews = await GetNews(0, newsCount, f.type);
-                    news = combineArrays(news, fetchedNews);
+                    //news = combineArrays(news, fetchedNews);
+                    news = mergeNewsItems(news, fetchedNews);
                 }
-                setNewsCount(newsCount + NEWS_PER_SECTION)
+                setNewsCount(newsCount + NEWS_PER_SECTION);
+                console.log(news.sort(function(a, b) { return b.date.getTime() - a.date.getTime(); }));
                 setNewsItems(news.sort(function(a, b) { return b.date.getTime() - a.date.getTime(); }));
             } catch (error) {
                 console.error("Error fetching RSS feed", error);
@@ -141,7 +151,7 @@ export default function Home()
         }
 
         fetchRSS();
-    }, [newsItems, newsCount]);
+    }, [newsItems, newsCount, filterList]);
 
     useEffect(() => {
         fetchNews();
@@ -168,8 +178,8 @@ export default function Home()
             </div>
             <div className="flex gap-6 px-10 flex-col items-center justify-center justify-items-start">
                 {
-                    newsItems.map((item, index) => (
-                        <div key={index} className="w-2/5">
+                    newsItems.map((item) => (
+                        <div key={item.link} className="w-2/5">
                             <Link className="transition hover:scale-[1.02]" href={item.link} target="_blank" rel="noopener noreferrer" passHref>
                                 <Card style={{ cursor: 'pointer' }}>
                                     <div className="flex flex-row items-center justify-items-center justify-center">
