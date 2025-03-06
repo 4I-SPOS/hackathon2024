@@ -9,11 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@nextui-org/react": "^2.4.8",
+    "@heroui/react": "2.7.4",
     "@opentelemetry/api": "^1.9.0",
     "framer-motion": "^11.11.0",
     "leaflet": "^1.9.4",
-    "next": "14.2.14",
+    "next": "15.1.2",
     "react": "^18",
     "react-dom": "^18",
     "react-intersection-observer": "^9.13.1",

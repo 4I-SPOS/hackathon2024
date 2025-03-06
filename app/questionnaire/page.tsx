@@ -1,7 +1,7 @@
 "use client"
 
-import {Card} from "@nextui-org/react";
-import {CardBody} from "@nextui-org/card";
+import {Card} from "@heroui/react";
+import {CardBody} from "@heroui/card";
 import {useState} from "react";
 import {redirect} from "next/navigation";
 

@@ -9,7 +9,7 @@ import closeIconSrc from "@/app/assets/icons/close_b.png";
 import globeIconSrc from "@/app/assets/icons/globe_b.png";
 import wheelChairSrc from "@/app/assets/icons/wheelchair_b.png"
 import { IArchitektonickaPamatka, ICyklovylety, IHrady, IKina, IKulturniDomy, ILazne, IMuzeaAGalerie, INarodniKulturniPamatky, IOstatniHistorickePamatky, IPamatkoveRezervace, IPamatkoveZony, IPivovary, IRozhlednyAVyhlidky, IRybareni, ISolneJeskyne, ITechnickePamatky, IValecneHrobyVeVlastnictviKraje, IZamky } from "../firebase";
-import { Link } from "@nextui-org/react";
+import { Link } from "@heroui/react";
 
 interface IActivityListItemProps {
     activity: IArchitektonickaPamatka | ICyklovylety | IHrady | IKina | IKulturniDomy | ILazne | IRozhlednyAVyhlidky | IMuzeaAGalerie | ISolneJeskyne | INarodniKulturniPamatky | IOstatniHistorickePamatky | IPamatkoveRezervace | IPamatkoveZony | ITechnickePamatky | IValecneHrobyVeVlastnictviKraje | IZamky | IPivovary | IRybareni;
