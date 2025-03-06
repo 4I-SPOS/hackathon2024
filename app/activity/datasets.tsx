@@ -5,7 +5,7 @@ import ActivityListItem from "./ActivityListItem";
 import DatasetListItem from "./DatasetListItem";
 import { useSearchParams } from 'next/navigation'
 
-interface ActivityDatasetsProps {
+export interface ActivityDatasetsProps {
     datoveSady: Array<{ name: string; data: any[] }>;
 }
 
