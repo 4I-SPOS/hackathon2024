@@ -5,7 +5,7 @@ import {
     getPivovary, getRozhlednyAVyhlidky, getRybareni, getSolneJeskyne,
     getTechnickePamatky, getValecneHrobyVeVlastnictviKraje, getZamky
 } from "../fallback-db";
-import ActivityDatasets from "./datasets";
+import DatasetsWrapper from "@/app/activity/DatasetsWrapper";
 
 export default function Activity() {
     const datoveSady = [
@@ -29,7 +29,5 @@ export default function Activity() {
         { name: "Rybaření", data: getRybareni() }
     ];
 
-    return (
-        <ActivityDatasets datoveSady={datoveSady} />
-    );
+    return <DatasetsWrapper datoveSady={datoveSady} />;
 }

@@ -1,4 +1,4 @@
-import { DocumentData } from 'firebase-admin/firestore';
+/*import { DocumentData } from 'firebase-admin/firestore';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs, QueryDocumentSnapshot } from 'firebase/firestore';
 
@@ -28,9 +28,18 @@ export function converter<T extends DocumentData>() {
             return snapshot.data() as T;
         },
     };
+}*/
+
+interface IActivity {
+    zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
+    zemepisna_delka_v_souradnicovem_systemu_wgs84: string;
+    nazev: string;
+    webove_stranky: string;
+    bezbarierovost: string;
+    popis: string;
 }
 
-export interface IArchitektonickaPamatka extends DocumentData {
+export interface IArchitektonickaPamatka extends IActivity {
     cislo_orientacni: string;
     cislo_popisne_nebo_evidencni_podle_typu_cisla_domovniho: string;
     jedinecny_identifikator_v_datovem_skladu_turistickeho_portalu_khk: string;
@@ -56,7 +65,7 @@ export interface IArchitektonickaPamatka extends DocumentData {
     zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
 }
 
-export interface ICyklovylety extends DocumentData {
+export interface ICyklovylety extends IActivity {
     delka_cyklovyletu_v_metrech: string;
     id: string;
     jedinecny_identifikator_v_datovem_skladu_turistickeho_portalu_khk: string;
@@ -69,7 +78,7 @@ export interface ICyklovylety extends DocumentData {
     webove_stranky: string;
 }
 
-export interface IHrady extends DocumentData {
+export interface IHrady extends IActivity {
     jedinecny_identifikator_v_katalogu_otevrenych_dat_data_khk: string;
     kod_obce_dle_ciselniku_csu: string;
     kod_okresu_dle_ciselniku_csu: string;
@@ -91,7 +100,7 @@ export interface IHrady extends DocumentData {
     zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
 }
 
-export interface IInfocentra extends DocumentData {
+export interface IInfocentra extends IActivity {
     cislo_orientacni: string;
     cislo_popisne_nebo_evidencni_podle_typu_cisla_domovniho: string;
     id: string;
@@ -117,7 +126,7 @@ export interface IInfocentra extends DocumentData {
     zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
 }
 
-export interface IInformacniCentraAutobusoveDopravy extends DocumentData {
+export interface IInformacniCentraAutobusoveDopravy extends IActivity {
     cislo_popisne_nebo_evidencni_podle_typu_cisla_domovniho: string;
     email: string;
     id: string;
@@ -142,7 +151,7 @@ export interface IInformacniCentraAutobusoveDopravy extends DocumentData {
     zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
 }
 
-export interface IKina extends DocumentData {
+export interface IKina extends IActivity {
     bezbarierovost: string;
     cislo_orientacni: string;
     cislo_popisne_nebo_evidencni_podle_typu_cisla_domovniho: string;
@@ -172,7 +181,7 @@ export interface IKina extends DocumentData {
     zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
 }
 
-export interface IKulturniDomy extends DocumentData {
+export interface IKulturniDomy extends IActivity {
     bezbarierovost: string;
     cislo_orientacni: string;
     cislo_popisne_nebo_evidencni_podle_typu_cisla_domovniho: string;
@@ -203,7 +212,7 @@ export interface IKulturniDomy extends DocumentData {
     zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
 }
 
-export interface ILazne extends DocumentData {
+export interface ILazne extends IActivity {
     cislo_orientacni: string;
     cislo_popisne_nebo_evidencni_podle_typu_cisla_domovniho: string;
     druh_zarizeni: string;
@@ -231,7 +240,7 @@ export interface ILazne extends DocumentData {
     zrizovatel: string;
 }
 
-export interface ILekarskaPohotovostniSluzba extends DocumentData {
+export interface ILekarskaPohotovostniSluzba extends IActivity {
     cilova_skupina: string;
     cislo_domovni: string;
     id: string;
@@ -255,7 +264,7 @@ export interface ILekarskaPohotovostniSluzba extends DocumentData {
     zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
 }
 
-export interface IMuzeaAGalerie extends DocumentData {
+export interface IMuzeaAGalerie extends IActivity {
     bezbarierovost: string;
     cislo_orientacni: string;
     cislo_popisne_nebo_evidencni_podle_typu_cisla_domovniho: string;
@@ -285,7 +294,7 @@ export interface IMuzeaAGalerie extends DocumentData {
     zrizovatel: string;
 }
 
-export interface INarodniKulturniPamatky extends DocumentData {
+export interface INarodniKulturniPamatky extends IActivity {
     cislo_orientacni: string;
     cislo_popisne_nebo_evidencni_podle_typu_cisla_domovniho: string;
     ico: string;
@@ -312,7 +321,7 @@ export interface INarodniKulturniPamatky extends DocumentData {
     zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
 }
 
-export interface INaslednaLuzkovaPece extends DocumentData {
+export interface INaslednaLuzkovaPece extends IActivity {
     cislo_orientacni: string;
     cislo_popisne_nebo_evidencni_podle_typu_cisla_domovniho: string;
     ico: string;
@@ -339,7 +348,7 @@ export interface INaslednaLuzkovaPece extends DocumentData {
     zrizovatel: string;
 }
 
-export interface IOdborneLecebneUstavy extends DocumentData {
+export interface IOdborneLecebneUstavy extends IActivity {
     cislo_orientacni: string;
     cislo_popisne_nebo_evidencni_podle_typu_cisla_domovniho: string;
     druh_pece: string;
@@ -369,7 +378,7 @@ export interface IOdborneLecebneUstavy extends DocumentData {
     zrizovatel: string;
 }
 
-export interface IOstatniHistorickePamatky extends DocumentData {
+export interface IOstatniHistorickePamatky extends IActivity {
     cislo_orientacni: string;
     cislo_popisne_nebo_evidencni_podle_typu_cisla_domovniho: string;
     id: string;
@@ -395,7 +404,7 @@ export interface IOstatniHistorickePamatky extends DocumentData {
     zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
 }
 
-export interface IPamatkoveRezervace extends DocumentData {
+export interface IPamatkoveRezervace extends IActivity {
     datum_prohlaseni_za_pamatkovou_rezervaci: string;
     datum_ucinnosti_prohlaseni_za_pamatkovou_rezervaci: string;
     dokument: string;
@@ -416,7 +425,7 @@ export interface IPamatkoveRezervace extends DocumentData {
     webove_stranky: string;
 }
 
-export interface IPamatkoveZony extends DocumentData {
+export interface IPamatkoveZony extends IActivity {
     datum_prohlaseni_za_pamatkovou_zonu: string;
     datum_ucinnosti_prohlaseni_za_pamatkovou_zonu: string;
     dokument: string;
@@ -437,7 +446,7 @@ export interface IPamatkoveZony extends DocumentData {
     webove_stranky: string;
 }
 
-export interface IPivovary extends DocumentData {
+export interface IPivovary extends IActivity {
     cislo_orientacni: string;
     cislo_popisne_nebo_evidencni_podle_typu_cisla_domovniho: string;
     email_c: {
@@ -475,7 +484,7 @@ export interface IPivovary extends DocumentData {
     zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
 }
 
-export interface IPoskytovateleSocialnichSluzeb extends DocumentData {
+export interface IPoskytovateleSocialnichSluzeb extends IActivity {
     cislo_orientacni: string;
     cislo_popisne_nebo_evidencni_podle_typu_cisla_domovniho: string;
     dic: string;
@@ -505,7 +514,7 @@ export interface IPoskytovateleSocialnichSluzeb extends DocumentData {
     zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
 }
 
-export interface IPraktictiLekariProDospele extends DocumentData {
+export interface IPraktictiLekariProDospele extends IActivity {
     cislo_orientacni: string;
     cislo_popisne_nebo_evidencni_podle_typu_cisla_domovniho: string;
     ico: string;
@@ -531,7 +540,7 @@ export interface IPraktictiLekariProDospele extends DocumentData {
     zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
 }
 
-export interface IRozhlednyAVyhlidky extends DocumentData {
+export interface IRozhlednyAVyhlidky extends IActivity {
     cislo_orientacni: string;
     cislo_popisne_nebo_evidencni_podle_typu_cisla_domovniho: string;
     id: string;
@@ -557,7 +566,7 @@ export interface IRozhlednyAVyhlidky extends DocumentData {
     zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
 }
 
-export interface IRybareni extends DocumentData {
+export interface IRybareni extends IActivity {
     cislo_popisne_nebo_evidencni_podle_typu_cisla_domovniho: string;
     email_c: {
         [key: number]: string;
@@ -592,7 +601,7 @@ export interface IRybareni extends DocumentData {
     zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
 }
 
-export interface ISolneJeskyne extends DocumentData {
+export interface ISolneJeskyne extends IActivity {
     cislo_orientacni: string;
     cislo_popisne_nebo_evidencni_podle_typu_cisla_domovniho: string;
     email_c: {
@@ -630,7 +639,7 @@ export interface ISolneJeskyne extends DocumentData {
     zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
 }
 
-export interface ITechnickePamatky extends DocumentData {
+export interface ITechnickePamatky extends IActivity {
     cislo_orientacni: string;
     cislo_popisne_nebo_evidencni_podle_typu_cisla_domovniho: string;
     id: string;
@@ -656,7 +665,7 @@ export interface ITechnickePamatky extends DocumentData {
     zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
 }
 
-export interface IValecneHrobyVeVlastnictviKraje extends DocumentData {
+export interface IValecneHrobyVeVlastnictviKraje extends IActivity {
     autor: string;
     charakter_hrobu: string;
     cislo_hrobu_jine: string;
@@ -692,7 +701,7 @@ export interface IValecneHrobyVeVlastnictviKraje extends DocumentData {
     zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
 }
 
-export interface IZamky extends DocumentData {
+export interface IZamky extends IActivity {
     cislo_orientacni: string;
     cislo_popisne_nebo_evidencni_podle_typu_cisla_domovniho: string;
     id: string;
@@ -717,7 +726,7 @@ export interface IZamky extends DocumentData {
     zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
 }
 
-export interface IZubniLekari extends DocumentData {
+export interface IZubniLekari extends IActivity {
     cislo_orientacni: string;
     cislo_popisne_nebo_evidencni_podle_typu_cisla_domovniho: string;
     ico: string;
@@ -743,424 +752,4 @@ export interface IZubniLekari extends DocumentData {
     zemepisna_sirka_v_souradnicovem_systemu_wgs84: string;
 }
 
-
-
-export const getArchitektonickePamatky = async () => {
-    try {
-        const pamatkyCollection = collection(db, 'architektonicke_pamatky');
-        const querySnapshot = await getDocs(pamatkyCollection);
-
-        const architektonickePamatky = querySnapshot.docs.map(doc =>
-            doc.data() as IArchitektonickaPamatka
-        );
-
-        return architektonickePamatky;
-    } catch (error) {
-        console.error("Error fetching (architektonicke_pamatky): ", error);
-        throw error;
-    }
-};
-
-export const getCyklovylety = async () => {
-    try {
-        const cyklovyletyCollection = collection(db, 'cyklovylety');
-        const querySnapshot = await getDocs(cyklovyletyCollection);
-
-        const cyklovylety = querySnapshot.docs.map(doc =>
-            doc.data() as ICyklovylety
-        );
-
-        return cyklovylety;
-    } catch (error) {
-        console.error("Error fetching (cyklovylety): ", error);
-        throw error;
-    }
-};
-
-export const getHrady = async () => {
-    try {
-        const hradyCollection = collection(db, 'hrady');
-        const querySnapshot = await getDocs(hradyCollection);
-
-        const hrady = querySnapshot.docs.map(doc =>
-            doc.data() as IHrady
-        );
-
-        return hrady;
-    } catch (error) {
-        console.error("Error fetching (hrady): ", error);
-        throw error;
-    }
-};
-
-export const getInfocentra = async () => {
-    try {
-        const infocentraCollection = collection(db, 'infocentra');
-        const querySnapshot = await getDocs(infocentraCollection);
-
-        const infocentra = querySnapshot.docs.map(doc =>
-            doc.data() as IInfocentra
-        );
-
-        return infocentra;
-    } catch (error) {
-        console.error("Error fetching (infocentra): ", error);
-        throw error;
-    }
-};
-
-export const getInformacniCentraAutobusoveDopravy = async () => {
-    try {
-        const informacniCentraAutobusoveDopravyCollection = collection(db, 'informacni_centra_autobusove_dopravy');
-        const querySnapshot = await getDocs(informacniCentraAutobusoveDopravyCollection);
-
-        const informacniCentraAutobusoveDopravy = querySnapshot.docs.map(doc =>
-            doc.data() as IInformacniCentraAutobusoveDopravy
-        );
-
-        return informacniCentraAutobusoveDopravy;
-    } catch (error) {
-        console.error("Error fetching (informacni_centra_autobusove_dopravy): ", error);
-        throw error;
-    }
-};
-
-export const getKina = async () => {
-    try {
-        const kinaCollection = collection(db, 'kina');
-        const querySnapshot = await getDocs(kinaCollection);
-
-        const kina = querySnapshot.docs.map(doc =>
-            doc.data() as IKina
-        );
-
-        return kina;
-    } catch (error) {
-        console.error("Error fetching (kina): ", error);
-        throw error;
-    }
-};
-
-export const getKulturniDomy = async () => {
-    try {
-        const kulturniDomyCollection = collection(db, 'kulturni_domy');
-        const querySnapshot = await getDocs(kulturniDomyCollection);
-
-        const kulturniDomy = querySnapshot.docs.map(doc =>
-            doc.data() as IKulturniDomy
-        );
-
-        return kulturniDomy;
-    } catch (error) {
-        console.error("Error fetching (kulturni_domy): ", error);
-        throw error;
-    }
-};
-
-export const getLazne = async () => {
-    try {
-        const lazneCollection = collection(db, 'lazne');
-        const querySnapshot = await getDocs(lazneCollection);
-
-        const lazne = querySnapshot.docs.map(doc =>
-            doc.data() as ILazne
-        );
-
-        return lazne;
-    } catch (error) {
-        console.error("Error fetching (lazne): ", error);
-        throw error;
-    }
-};
-
-export const getlekarskaPohotovostniSluzba = async () => {
-    try {
-        const lekarskaPohotovostniSluzbaCollection = collection(db, 'lekarska_pohotovostni_sluzba');
-        const querySnapshot = await getDocs(lekarskaPohotovostniSluzbaCollection);
-
-        const lekarskaPohotovostniSluzba = querySnapshot.docs.map(doc =>
-            doc.data() as ILekarskaPohotovostniSluzba
-        );
-
-        return lekarskaPohotovostniSluzba;
-    } catch (error) {
-        console.error("Error fetching (lekarska_pohotovostni_sluzba): ", error);
-        throw error;
-    }
-};
-
-export const getMuzeaAGalerie = async () => {
-    try {
-        const muzeaAGalerieCollection = collection(db, 'muzea_a_galerie');
-        const querySnapshot = await getDocs(muzeaAGalerieCollection);
-
-        const muzeaAGalerie = querySnapshot.docs.map(doc =>
-            doc.data() as IMuzeaAGalerie
-        );
-
-        return muzeaAGalerie;
-    } catch (error) {
-        console.error("Error fetching (muzea_a_galerie): ", error);
-        throw error;
-    }
-};
-
-export const getNarodniKulturniPamatky = async () => {
-    try {
-        const narodniKulturniPamatkyCollection = collection(db, 'narodni_kulturni_pamatky');
-        const querySnapshot = await getDocs(narodniKulturniPamatkyCollection);
-
-        const narodniKulturniPamatky = querySnapshot.docs.map(doc =>
-            doc.data() as INarodniKulturniPamatky
-        );
-
-        return narodniKulturniPamatky;
-    } catch (error) {
-        console.error("Error fetching (narodni_kulturni_pamatky): ", error);
-        throw error;
-    }
-};
-
-export const getNaslednaLuzkovaPece = async () => {
-    try {
-        const naslednaLuzkovaPeceCollection = collection(db, 'nasledna_luzkova_pece');
-        const querySnapshot = await getDocs(naslednaLuzkovaPeceCollection);
-
-        const naslednaLuzkovaPece = querySnapshot.docs.map(doc =>
-            doc.data() as INaslednaLuzkovaPece
-        );
-
-        return naslednaLuzkovaPece;
-    } catch (error) {
-        console.error("Error fetching (nasledna_luzkova_pece): ", error);
-        throw error;
-    }
-};
-
-export const getOdborneLecebneUstavy = async () => {
-    try {
-        const odborneLecebneUstavyCollection = collection(db, 'odborne_lecebne_ustavy');
-        const querySnapshot = await getDocs(odborneLecebneUstavyCollection);
-
-        const odborneLecebneUstavy = querySnapshot.docs.map(doc =>
-            doc.data() as IOdborneLecebneUstavy
-        );
-
-        return odborneLecebneUstavy;
-    } catch (error) {
-        console.error("Error fetching (odborne_lecebne_ustavy): ", error);
-        throw error;
-    }
-};
-
-export const getOstatniHistorickePamatky = async () => {
-    try {
-        const ostatniHistorickePamatkyCollection = collection(db, 'ostatni_historicke_pamatky');
-        const querySnapshot = await getDocs(ostatniHistorickePamatkyCollection);
-
-        const ostatniHistorickePamatky = querySnapshot.docs.map(doc =>
-            doc.data() as IOstatniHistorickePamatky
-        );
-
-        return ostatniHistorickePamatky;
-    } catch (error) {
-        console.error("Error fetching (ostatni_historicke_pamatky): ", error);
-        throw error;
-    }
-};
-
-export const getPamatkoveRezervace = async () => {
-    try {
-        const pamatkoveRezervaceCollection = collection(db, 'pamatkove_rezervace');
-        const querySnapshot = await getDocs(pamatkoveRezervaceCollection);
-
-        const pamatkoveRezervace = querySnapshot.docs.map(doc =>
-            doc.data() as IPamatkoveRezervace
-        );
-
-        return pamatkoveRezervace;
-    } catch (error) {
-        console.error("Error fetching (pamatkove_rezervace): ", error);
-        throw error;
-    }
-};
-
-export const getPamatkoveZony = async () => {
-    try {
-        const pamatkoveZonyCollection = collection(db, 'pamatkove_zony');
-        const querySnapshot = await getDocs(pamatkoveZonyCollection);
-
-        const pamatkoveZony = querySnapshot.docs.map(doc =>
-            doc.data() as IPamatkoveZony
-        );
-
-        return pamatkoveZony;
-    } catch (error) {
-        console.error("Error fetching (pamatkove_zony): ", error);
-        throw error;
-    }
-};
-
-// PIVOOOOOOO!!!!!!
-export const getPivovary = async () => {
-    try {
-        const pivovaryCollection = collection(db, 'pivovary');
-        const querySnapshot = await getDocs(pivovaryCollection);
-
-        const pivovary = querySnapshot.docs.map(doc =>
-            doc.data() as IPivovary
-        );
-
-        return pivovary;
-    } catch (error) {
-        console.error("Error fetching (pivovary): ", error);
-        throw error;
-    }
-};
-
-export const getPoskytovateleSocialnichSluzeb = async () => {
-    try {
-        const poskytovateleSocialnichSluzeCollection = collection(db, 'poskytovatele_socialnich_sluzeb');
-        const querySnapshot = await getDocs(poskytovateleSocialnichSluzeCollection);
-
-        const poskytovateleSocialnichSluzeb = querySnapshot.docs.map(doc =>
-            doc.data() as IPoskytovateleSocialnichSluzeb
-        );
-
-        return poskytovateleSocialnichSluzeb;
-    } catch (error) {
-        console.error("Error fetching (poskytovatele_socialnich_sluzeb): ", error);
-        throw error;
-    }
-};
-
-export const getPraktictiLekariProDospele = async () => {
-    try {
-        const dbCollection = collection(db, 'prakticti_lekari_pro_dospele');
-        const querySnapshot = await getDocs(dbCollection);
-
-        const dbData = querySnapshot.docs.map(doc =>
-            doc.data() as IPraktictiLekariProDospele
-        );
-
-        return dbData;
-    } catch (error) {
-        console.error("Error fetching (prakticti_lekari_pro_dospele): ", error);
-        throw error;
-    }
-};
-
-export const getRozhlednyAVyhlidky = async () => {
-    try {
-        const dbCollection = collection(db, 'rozhledny_a_vyhlidky');
-        const querySnapshot = await getDocs(dbCollection);
-
-        const dbData = querySnapshot.docs.map(doc =>
-            doc.data() as IRozhlednyAVyhlidky
-        );
-
-        return dbData;
-    } catch (error) {
-        console.error("Error fetching (rozhledny_a_vyhlidky): ", error);
-        throw error;
-    }
-};
-
-export const getRybareni = async () => {
-    try {
-        const dbCollection = collection(db, 'rybareni');
-        const querySnapshot = await getDocs(dbCollection);
-
-        const dbData = querySnapshot.docs.map(doc =>
-            doc.data() as IRybareni
-        );
-
-        return dbData;
-    } catch (error) {
-        console.error("Error fetching (rybareni): ", error);
-        throw error;
-    }
-};
-
-export const getSolneJeskyne = async () => {
-    try {
-        const dbCollection = collection(db, 'solne_jeskyne');
-        const querySnapshot = await getDocs(dbCollection);
-
-        const dbData = querySnapshot.docs.map(doc =>
-            doc.data() as ISolneJeskyne
-        );
-
-        return dbData;
-    } catch (error) {
-        console.error("Error fetching (solne_jeskyne): ", error);
-        throw error;
-    }
-};
-
-export const getTechnickePamatky = async () => {
-    try {
-        const dbCollection = collection(db, 'technicke_pamatky');
-        const querySnapshot = await getDocs(dbCollection);
-
-        const dbData = querySnapshot.docs.map(doc =>
-            doc.data() as ITechnickePamatky
-        );
-
-        return dbData;
-    } catch (error) {
-        console.error("Error fetching (technicke_pamatky): ", error);
-        throw error;
-    }
-};
-
-export const getValecneHrobyVeVlastnictviKraje = async () => {
-    try {
-        const dbCollection = collection(db, 'valecne_hroby_ve_vlastnictvi_kraje');
-        const querySnapshot = await getDocs(dbCollection);
-
-        const dbData = querySnapshot.docs.map(doc =>
-            doc.data() as IValecneHrobyVeVlastnictviKraje
-        );
-
-        return dbData;
-    } catch (error) {
-        console.error("Error fetching (valecne_hroby_ve_vlastnictvi_kraje): ", error);
-        throw error;
-    }
-};
-
-export const getZamky = async () => {
-    try {
-        const dbCollection = collection(db, 'zamky');
-        const querySnapshot = await getDocs(dbCollection);
-
-        const dbData = querySnapshot.docs.map(doc =>
-            doc.data() as IZamky
-        );
-
-        return dbData;
-    } catch (error) {
-        console.error("Error fetching (zamky): ", error);
-        throw error;
-    }
-};
-
-export const getZubniLekari = async () => {
-    try {
-        const dbCollection = collection(db, 'zubni_lekari');
-        const querySnapshot = await getDocs(dbCollection);
-
-        const dbData = querySnapshot.docs.map(doc =>
-            doc.data() as IZubniLekari
-        );
-
-        return dbData;
-    } catch (error) {
-        console.error("Error fetching (zubni_lekari): ", error);
-        throw error;
-    }
-};
-
-
-export { db };
+//export { db };

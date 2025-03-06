@@ -1,4 +1,5 @@
 import { Card } from "@heroui/react";
+import Image from "next/image";
 
 interface ActivityCardProps {
   imgSrc: string;
@@ -8,7 +9,7 @@ interface ActivityCardProps {
 export default function ActivityCard({ imgSrc, title }: ActivityCardProps) {
   return (
     <Card className="relative w-[14rem] h-[20rem] cursor-pointer hover:scale-[1.03] transition duration-200">
-      <img
+      <Image
         src={imgSrc}
         alt={title}
         className="absolute inset-0 w-full h-full object-cover"

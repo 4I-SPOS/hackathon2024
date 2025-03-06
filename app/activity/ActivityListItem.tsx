@@ -29,8 +29,8 @@ export default function ActivityListItem({ activity, sada }: IActivityListItemPr
     }
 
     const defaultPosition: [number, number] = [
-        aktivita?.zemepisna_sirka_v_souradnicovem_systemu_wgs84 || 50.0755, // Default lat (Prague)
-        aktivita?.zemepisna_delka_v_souradnicovem_systemu_wgs84 || 14.4378  // Default lon (Prague)
+        parseFloat(aktivita?.zemepisna_sirka_v_souradnicovem_systemu_wgs84) || 50.0755, // Default lat (Prague)
+        parseFloat(aktivita?.zemepisna_delka_v_souradnicovem_systemu_wgs84) || 14.4378  // Default lon (Prague)
     ];
 
     const markerIcon = L.icon({
