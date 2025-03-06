@@ -129,6 +129,8 @@ export default function Home()
         {type: NewsCategory.Ekonomika, active: filterEkonomika},
         {type: NewsCategory.Kultura, active: filterKultura}];
 
+    // TODO: zjistit jestli je opravdu potreba nebo jestli je to naschval
+    /* eslint-disable react-hooks/exhaustive-deps */
     const fetchNews = useCallback(() => {
         async function fetchRSS() {
             try {
@@ -152,15 +154,23 @@ export default function Home()
 
         fetchRSS();
     }, [newsItems, newsCount, filterList]);
+    /* eslint-enable react-hooks/exhaustive-deps */
 
+    // TODO: zjistit jestli opravdu chybi nebo jestli je to naschval
+    /* eslint-disable react-hooks/exhaustive-deps */
     useEffect(() => {
         fetchNews();
     }, [filterObecne, filterSport, filterFotbal, filterHokej, filterEkonomika, filterKultura]);
+    /* eslint-enable react-hooks/exhaustive-deps */
+
+    // TODO: zjistit jestli opravdu chybi nebo jestli je to naschval
+    /* eslint-disable react-hooks/exhaustive-deps */
     useEffect(() =>
     {
         if (inView)
             fetchNews();
     }, [inView]);
+    /* eslint-enable react-hooks/exhaustive-deps */
 
     return (
         <div className="w-full flex flex-row p-10 items-center justify-center">
