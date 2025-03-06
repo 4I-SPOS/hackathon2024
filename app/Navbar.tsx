@@ -23,8 +23,8 @@ export default function Navbar() {
                         Aktivity
                     </Link>
                 </NavbarItem>
-                <NavbarItem isActive={pathname === "/novinky"}>
-                    <Link href="/novinky" className={pathname === "/novinky" ? "active" : ""}>
+                <NavbarItem isActive={pathname === "/news"}>
+                    <Link href="/news" className={pathname === "/news" ? "active" : ""}>
                         Novinky
                     </Link>
                 </NavbarItem>
