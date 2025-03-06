@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link";
-import { Navbar as NextUINavbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react";
+import { Navbar as NextUINavbar, NavbarBrand, NavbarContent, NavbarItem } from "@heroui/react";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {

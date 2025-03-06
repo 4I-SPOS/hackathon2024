@@ -2,7 +2,7 @@
 
 import {Dispatch, SetStateAction, useCallback, useEffect, useState} from "react";
 import {useInView} from "react-intersection-observer";
-import {Card, CardFooter, Checkbox, Image} from "@nextui-org/react";
+import {Card, CardFooter, Checkbox, Image} from "@heroui/react";
 import Link from "next/link";
 
 interface NewsItem {

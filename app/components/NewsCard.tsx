@@ -1,7 +1,7 @@
 // components/NewsCard.tsx
 
-import { Card, CardFooter } from "@nextui-org/react";
-import { Image } from "@nextui-org/react";
+import { Card, CardFooter } from "@heroui/react";
+import { Image } from "@heroui/react";
 import Link from 'next/link'; // Import Next.js Link
 
 interface NewsCardProps {

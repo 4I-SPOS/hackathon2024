@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import NewsCard from "./components/NewsCard";
 import Link from "next/link";
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 import Image from "next/image";
 import bgSrc from "@/app/assets/home_bg.jpg";
 
