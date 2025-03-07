@@ -11,7 +11,7 @@ export default function Navbar() {
     return (
         <NextUINavbar>
             <NavbarBrand>
-                <p className="font-bold text-inherit">Portál seniora</p>
+                <Link href="/" className="font-bold text-inherit">Portál seniora</Link>
             </NavbarBrand>
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
                 <NavbarItem isActive={pathname === "/"}>
