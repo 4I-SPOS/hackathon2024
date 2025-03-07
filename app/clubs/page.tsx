@@ -87,14 +87,14 @@ export default function Home()
 
     return(
         <div className="p-10">
-            <div className="flex flex-row justify-center items-center justify-items-center align-middle text-5xl font-bold">
+            <div className="flex flex-row justify-center items-center justify-items-center align-middle text-5xl font-bold my-10">
                 Kluby
             </div>
             <div className="w-full grid grid-cols-4 p-10 gap-5">
                 {
                     clubs.map((club: ClubCard, idx: number) => (
                         <div className="" key={idx}>
-                            <Card className="h-full transition hover:scale-[1.02] hover:drop-shadow-xl" isPressable={true} fullWidth={true} onPress={() => { window.open(club.url, '_blank'); }}>
+                            <Card className="h-full hover:scale-[1.02] transition hover:drop-shadow-xl" isPressable={true} fullWidth={true} onPress={() => { window.open(club.url, '_blank'); }}>
                                 <CardBody className="text-3xl flex-wrap h-full w-full flex flex-col justify-between items-center justify-items-center align-middle p-0" style={{ margin: "0", padding: "0", gap: "0" }}>
                                     <Image
                                         src={club.image}
@@ -109,7 +109,7 @@ export default function Home()
                                 {club.name}
                             </div>
                         </span>
-                                    <span className="text-balance w-full py-1 px-3 text-medium">
+                                    <span className="text-balance w-full py-1 px-3 text-medium line-clamp-4">
                             {club.description}
                         </span>
                                 </CardBody>
