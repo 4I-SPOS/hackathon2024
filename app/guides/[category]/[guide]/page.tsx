@@ -2,27 +2,27 @@ import {getGuideContent} from "@/app/guides/guide";
 import {notFound} from "next/navigation";
 
 function parseTextToHTML(text: string): string {
-    // Check if the text contains the bullet point '·      '
-    if (text.includes('·      ')) {
-        // Split the text by the bullet points and remove any empty parts
-        const items = text.split('·      ').filter(item => item.trim() !== '');
+    let out = text;
 
-        // Start the unordered list
+    if (out.includes('·      ')) {
+        const items = out.split('·      ').filter(item => item.trim() !== '');
         let htmlOutput = '<ul>';
-
-        // Loop through the items and create <li> for each one
         items.forEach(item => {
-            htmlOutput += `<li style="display: list-item; list-style-type: circle;">${item.trim()}</li>`;
+            htmlOutput += `<li style="display: list-item; list-style-type: disc; list-style-position: inside;">${item.trim()}</li>`;
         });
-
-        // Close the unordered list
         htmlOutput += '</ul>';
-
-        return htmlOutput;
-    } else {
-        // Return the original text if no bullet points are detected
-        return text;
+        out = htmlOutput;
     }
+
+    out = out.replace(/\[\[([^\]]+)\]\]/g, (match, imageName) => {
+        return `<img style="display: block; margin-left: auto; margin-right: auto; width: 750px" src="/media/guides/guides/guide_content/${imageName}" alt="${imageName}">`;
+    });
+
+    out = out.replace(/\(\(([^\)]+)\)\)/g, (match, text) => {
+        return `<span style="color: gray;">${text}</span>`;
+    });
+
+    return out;
 }
 
 
@@ -43,10 +43,10 @@ export default async function Home({params}: { params: Promise<{ category: strin
             </div>
             <div className="mx-48">
                 {guideContent?.map((contentItem, index) => (
-                    <div key={index} className="p-2">
+                    <div key={index} className="p-2 text-2xl">
                         {Object.entries(contentItem).map(([key, value], idx) => (
                             <div key={idx}>
-                                { key.length > 1 && <div className="text-2xl">{key}</div> }
+                                { key.length > 1 && <div className="text-2xl font-bold">{key}</div> }
                                 <span dangerouslySetInnerHTML={{ __html: parseTextToHTML(value) }}></span>
                             </div>
                         ))}
