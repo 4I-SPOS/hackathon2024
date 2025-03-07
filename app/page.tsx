@@ -60,23 +60,23 @@ export default function Home() {
 
             <div className="">
                 <div className="flex items-center flex-col">
-                    <div className="py-32 w-1/2 flex flex-col items-center gap-5">
+                    <div className="pb-32 pt-32 w-1/2 flex flex-col items-center gap-5">
                         <h1 className="font-bold text-5xl mt-2 text-center tracking-tight">Nevíte co podniknout?</h1>
                         <p className="text-center mt-2 text-neutral-500 text-xl w-3/5">
                             Vyplňte náš krátký dotazník a my vám na základě vašich odpovědí doporučíme aktivity, které vás budou nejvíce zajímat!
                         </p>
                         <Link href="/questionnaire" className="">
-                            <Button className="bg-black text-white font-bold text-xl scale-[1.2] mt-2 transition">Vyplnit dotazník</Button>
+                            <Button className="bg-black text-white font-bold  scale-[1.2] mt-2 transition">Vyplnit dotazník</Button>
                         </Link>
                     </div>
                 </div>
             </div>
 
-            {/*<div>
-                <div className="flex flex-col gap-5">
+            <div className="w-full px-64 pb-20">
+                <div className="flex flex-col gap-14">
                     <h1 className="font-bold text-4xl text-center ">Zkoukňete co se v Česku děje</h1>
-                    <div className="flex gap-6 mt-7 px-10">
-                        {/*{newsItems.map((item, index) => (
+                    <div className="flex gap-6 ">
+                        {newsItems.map((item, index) => (
                             <NewsCard
                                 key={index}
                                 title={item.title}
@@ -86,10 +86,13 @@ export default function Home() {
                         />
                         ))}
                     </div>
+                    <div className="flex scale-[1.2] w-full justify-center">
+                        <Button className="bg-black text-white font-bold inline">Načíst další</Button>
+                    </div>
                 </div>
-            </div>*/}
+            </div>
 
-            <div className="w-full flex flex-col items-center gap-20">
+            <div className="w-full flex py-10 flex-col items-center gap-20">
                 <div className="text-5xl font-bold">Dnes má svátek Renata</div>
                 <p className="text-2xl text-neutral-500 w-1/3 text-center">Pokud znáte nějakou renatu, popřejte ji všechno nejlepší k svátku. Určitě jí to udělá radost!</p>
             </div>
