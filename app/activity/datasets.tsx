@@ -6,7 +6,7 @@ import DatasetListItem from "./DatasetListItem";
 import { useSearchParams } from 'next/navigation'
 
 export interface ActivityDatasetsProps {
-    datoveSady: Array<{ name: string; data: any[] }>;
+    datoveSady: Array<{ name: string; data: any[], img: string }>;
 }
 
 enum Activities {
@@ -136,12 +136,24 @@ export default function ActivityDatasets({ datoveSady }: ActivityDatasetsProps) 
                     />
                 </div>
                 <div className="w-full h-px bg-neutral-300 my-5"></div>
-
+                <div className="w-full flex flex-col items-center">
+                    <div className="font-bold text-5xl py-2">Podle nás si toto zamilujete</div>
+                    <p className="text-center text-neutral-500 w-2/3 py-2">Na základě Vašich odpovědí v dotazníku jsme vyhodnotili tři aktivity, které by pro vás mohly být příjemné a vhodné. Jsou přizpůsobeny vašim zájmům, zdraví a možnostem. </p>
+                    <div className="w-full grid grid-cols-3 gap-5 mt-5">
+                    {filteredData.slice(0, 3).map((sada, index) => (
+                        <div key={index.toString() + "_" + sada.name}>
+                            <ActivityListItem activity={sada.data[0]} isTop3={true} sada={sada.name} img={sada.img} />
+                        </div>
+                    ))}
+                    </div>
+                    <div className="w-full h-px bg-neutral-300 my-5"></div>
+                </div>
+                <div className="font-bold text-3xl pb-5 text-center">Tyto aktivity by se vám také mohli líbit</div>
                 <div className="w-full h-full grid grid-cols-4 gap-5">
                     {filteredData.map((sada, index) =>
                         (sada.data || []).map((item, index2) => (
                             <div key={index.toString() + "_" + index2.toString()}>
-                                <ActivityListItem activity={item} sada={sada.name} />
+                                <ActivityListItem activity={item} sada={sada.name} isTop3={false} img="https://ecospaints.net/catalog/view/theme/ecos_main/image/static_colors/2023/swatch/swatch_c-white-0000.webp" />
                             </div>
                         ))
                     )}
