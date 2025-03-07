@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Navbar as NextUINavbar, NavbarBrand, NavbarContent, NavbarItem } from "@heroui/react";
 import { usePathname } from "next/navigation";
-import {HomeIcon, NewspaperIcon, RocketLaunchIcon} from "@heroicons/react/24/solid";
+import {HomeIcon, NewspaperIcon, RocketLaunchIcon, UserGroupIcon} from "@heroicons/react/24/solid";
 
 export default function Navbar() {
     const pathname = usePathname();
@@ -27,6 +27,14 @@ export default function Navbar() {
                         <span className="flex flex-row justify-items-center justify-center align-middle gap-1">
                             <RocketLaunchIcon className="size-6" />
                             Aktivity
+                        </span>
+                    </Link>
+                </NavbarItem>
+                <NavbarItem isActive={pathname === "/clubs"}>
+                    <Link href="/clubs" className={pathname === "/clubs" ? "active" : ""}>
+                        <span className="flex flex-row justify-items-center justify-center align-middle gap-1">
+                            <UserGroupIcon className="size-6" />
+                            Kluby
                         </span>
                     </Link>
                 </NavbarItem>
