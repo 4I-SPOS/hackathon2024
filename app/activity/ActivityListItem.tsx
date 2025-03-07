@@ -14,12 +14,16 @@ import { Link } from "@heroui/react";
 interface IActivityListItemProps {
     activity: IArchitektonickaPamatka | ICyklovylety | IHrady | IKina | IKulturniDomy | ILazne | IRozhlednyAVyhlidky | IMuzeaAGalerie | ISolneJeskyne | INarodniKulturniPamatky | IOstatniHistorickePamatky | IPamatkoveRezervace | IPamatkoveZony | ITechnickePamatky | IValecneHrobyVeVlastnictviKraje | IZamky | IPivovary | IRybareni;
     sada: string;
+    img: string;
+    isTop3: boolean
 }
 
-const defaultClass = "z-10 bg-white h-full w-full rounded-xl outline outline-1 outline-neutral-200 absolute p-5 flex flex-col";
+const defaultClass = "z-10 bg-white h-full w-full rounded-xl outline outline-1 outline-neutral-200 absolute p-5 flex flex-col ";
 const selectedClass = "box-border z-30 bg-white h-[80vh] w-2/3 rounded-xl outline outline-1 outline-neutral-200 fixed top-[50%] translate-y-[-50%] p-5 left-[50%] translate-x-[-50%]";
 
-export default function ActivityListItem({ activity, sada }: IActivityListItemProps) {
+
+export default function ActivityListItem({ activity, sada, img, isTop3 }: IActivityListItemProps) {
+   
     const [isSelected, setIsSelected] = useState(false);
     const [aktivita] = useState(activity);
 
@@ -46,6 +50,7 @@ export default function ActivityListItem({ activity, sada }: IActivityListItemPr
                     <div className={defaultClass}>
                         <div className="font-semibold">{aktivita?.nazev || "Bez názvu"}</div>
                         <div className="uppercase text-neutral-400 text-sm">{sada || ""}</div>
+                        <img className="w-full h-full absolute top-0 left-0" src={img}/>
                     </div>
                 </div>
                 <div onClick={handleClick} className="z-20 fixed top-0 left-0 bg-black opacity-20 h-screen w-screen"></div>
@@ -95,9 +100,25 @@ export default function ActivityListItem({ activity, sada }: IActivityListItemPr
     } else {
         return (
             <div className="h-64 relative cursor-pointer" onClick={handleClick}>
-                <div className={defaultClass}>
-                    <div className="font-semibold">{aktivita?.nazev || "Bez názvu"}</div>
-                    <div className="uppercase text-neutral-400 text-sm">{sada || ""}</div>
+                <div className={defaultClass} style={{overflow: "hidden"}}>
+                    {isTop3 ?
+                    <>
+                        <div className="font-semibold z-30 text-white">{aktivita?.nazev || "Bez názvu"}</div>
+                        <div className="uppercase text-neutral-200 text-sm z-30">{sada || ""}</div>
+                    </>
+                    :
+                    <>
+                        <div className="font-semibold z-30 text-black">{aktivita?.nazev || "Bez názvu"}</div>
+                        <div className="uppercase text-neutral-500 text-sm z-30">{sada || ""}</div>
+                    </>
+                    
+                }
+                    {isTop3 &&
+                        <>
+                            <div className="z-20 w-full h-full absolute top-0 left-0" style={{background: "linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0) 100%)"}}></div>
+                            <img className="w-full h-full absolute top-0 left-0 z-10 object-cover" src={img}/>
+                        </>
+                    }   
                 </div>
             </div>
         );
