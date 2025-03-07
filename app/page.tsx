@@ -155,7 +155,7 @@ export default function Home() {
 
             <div ref={novinkyRef} className="w-full px-64 pb-20">
                 <div className="flex flex-col gap-14">
-                    <h1 className="font-bold text-4xl text-center ">Zkoukňete co se v Česku děje</h1>
+                    <h1 className="font-bold text-4xl text-center ">Zkoukňete co se děje v Česku</h1>
                     <div className="flex gap-6 ">
                         {newsItems.map((item, index) => (
                             <NewsCard
