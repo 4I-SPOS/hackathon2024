@@ -21,5 +21,8 @@ const config: Config = {
     },
   },
   plugins: [heroui()],
+  corePlugins: {
+    aspectRatio: true, // Ensure this is enabled
+  },
 };
 export default config;
