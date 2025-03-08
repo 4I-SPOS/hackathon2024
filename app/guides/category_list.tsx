@@ -24,7 +24,7 @@ export function CategoryList(props: {categories: { name: string, image: string}[
                                     <div className="flex flex-col mx-6">
                                         <div className="flex justify-between items-start">
                                             <div className="flex flex-col gap-0 w-full">
-                                                <h4 className="font-bold">
+                                                <h4 className="font-bold text-xl">
                                                     {category.name}
                                                 </h4>
                                             </div>
