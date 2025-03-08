@@ -59,6 +59,9 @@ async function GetNews(from: number, to: number, category: NewsCategory): Promis
 
     for (let i = from; i < to; i++)
     {
+        if (!items || !items[i])
+            continue;
+
         const title = items[i].querySelector("title")?.textContent || "Bez nadpisu";
         const description = items[i].querySelector("description")?.textContent || "Bez popisu";
         const mediaContent = items[i].getElementsByTagName("media:content")[0];
@@ -86,7 +89,7 @@ function FilterItem({ name, checked, setChecked }: { name: string; checked: bool
             className="bg-white cursor-pointer flex justify-between outline outline-1 outline-neutral-300 rounded-lg pl-3 pr-1 py-2"
         >
             <p>{name}</p>
-            <Checkbox isSelected={checked} onClick={handleDivClick} />
+            <Checkbox isSelected={checked} className="pointer-events-none" />
         </div>
     );
 }
@@ -175,7 +178,7 @@ export default function Home()
     return (
         <div className="w-full flex flex-row p-10 items-center justify-center">
             <div className="left-10 top-[6.5rem] p-5 rounded-xl outline outline-1 absolute outline-neutral-200 bg-neutral-100">
-                <h2 className="font-semibold text-lg">Seznam zpráv</h2>
+                <h2 className="font-bold text-4xl">Seznam zpráv</h2>
                 <p className="text-neutral-400 text-sm">Kliknutím vyberete zprávy, které vás zajímají.</p>
                 <div className="mt-4 flex flex-col gap-3">
                     <FilterItem name="Obecné" checked={filterObecne} setChecked={setFilterObecne} />
