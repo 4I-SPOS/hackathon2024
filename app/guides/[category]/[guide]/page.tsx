@@ -31,7 +31,7 @@ export default async function Home({params}: { params: Promise<{ category: strin
     const { category } = await params;
     const { guide } = await params;
 
-    const guideContent = getGuideContent(decodeURI(category), decodeURI(guide));
+    const guideContent = getGuideContent(decodeURI(category), decodeURI(guide).replaceAll("%2C", ","));
 
     if (!guideContent)
         return notFound();

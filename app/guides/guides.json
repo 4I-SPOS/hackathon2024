@@ -1,24 +1,80 @@
 {
   "Bezpečnost na internetu": {
-    "image": "/media/guides/categories/category1.jpg",
+    "image": "/media/guides/categories/internet.jpg",
     "guides": [
       {
+        "Jak vypadá podvodný email": {
+          "image": "/media/guides/guides/podvodny_email.jpg",
+          "content": [
+            { "": "((Rozpoznání a ochrana před phishingovými útoky))" },
+            { "": "Phishingové emaily jsou podvodné zprávy, které se tváří jako legitimní komunikace od důvěryhodných institucí, aby podvedly příjemce a získaly od nich citlivé informace, například hesla, čísla kreditních karet nebo osobní údaje. Zde jsou klíčové charakteristiky, které vám mohou pomoci rozeznat podvodný email." },
+            { "1. Adresa odesílatele": "Phishingové emaily často používají falešné nebo napodobené adresy odesílatele, které se snaží působit důvěryhodně. Pečlivě si zkontrolujte adresu odesílatele - podezřelá může být například adresa s drobnými překlepy nebo neznámou doménou.\n[[podvodny_mail_1.png]]" },
+            { "2. Znepokojivý nebo naléhavý obsah": "Podvodníci často používají taktiku zastrašování nebo naléhavosti k tomu, aby přiměli příjemce jednat rychle, aniž by měli čas se zamyslet. Takový email může obsahovat výhrůžky, že váš účet bude uzamčen, pokud okamžitě neprovedete určitou akci.\n[[podvodny_mail_2.png]]" },
+            { "3. Gramatické chyby a překlepy": "Mnoho phishingových emailů obsahuje gramatické chyby, překlepy nebo podivné formulace. Důvěryhodné společnosti obvykle zasílají zprávy, které jsou jazykově správné a pečlivě kontrolované." },
+            { "4. Neobvyklé přílohy nebo odkazy": "Phishingové emaily často obsahují škodlivé přílohy nebo odkazy na falešné webové stránky, které se snaží získat vaše osobní údaje nebo infikovat váš počítač. Nikdy neotvírejte přílohy nebo neklikejte na odkazy od neznámých odesílatelů. Obzvláště pak soubory s koncovkami EXE, COM, ZIP, BAT CMD" },
+            { "5. Žádost o osobní informace": "Legitimní společnosti většinou nežádají o citlivé údaje, jako jsou hesla nebo čísla bankovních účtů, prostřednictvím emailu. Pokud obdržíte takovou žádost, buďte velmi opatrní a ověřte si pravost požadavku přímo u instituce.\n[[podvodny_mail_3.png]]" },
+            { "Jak se chránit": "·      Pečlivě kontrolujte emailovou adresu odesílatele.\n·      Buďte opatrní u zpráv, které vyvolávají pocit naléhavosti nebo znepokojení.\n·      Kontrolujte gramatické chyby a překlepy.\n·      Nikdy neotevírejte přílohy nebo neklikejte na odkazy od neznámých odesílatelů.\n·      Nikdy neposkytujte citlivé údaje přes email.\nDůkladná kontrola a opatrnost při práci s emaily vám může pomoci ochránit se před phishingovými útoky a zabezpečit vaše osobní údaje." }
+          ]
+        },
+        "Jak nenaletět na podvodné SMS zprávy, telefonáty a emaily": {
+          "image": "/media/guides/guides/phone_scam.jpg",
+          "content": [
+            { "": "((Rozpoznání a ochrana před phishingovými útoky))" },
+            { "": "V dnešní digitální době jsou podvodné SMS zprávy, telefonáty a emaily čím dál tím častější. Tyto podvody mohou mít různé formy a cíle, ale všechny mají společné to, že se snaží zneužít naši důvěru a získat osobní nebo finanční informace. V tomto průvodci se podíváme na to, jak rozeznat podvody a jak se jim úspěšně vyhnout." },
+            { "Podvodné SMS zprávy": "" },
+            { "Jak je rozpoznat": "Podvodné SMS zprávy často vypadají, jako by pocházely od důvěryhodných institucí, jako jsou banky, pojišťovny nebo doručovací služby. Mohou obsahovat odkazy na falešné webové stránky nebo žádosti o osobní údaje.\n[[podvod_sms_1.png]]\n·      Neočekávané zprávy: Pokud obdržíte zprávu, kterou neočekáváte, buďte obezřetní.\n·      Podezřelé odkazy: Nikdy neklikejte na odkazy ve zprávách od neznámých odesílatelů.\n·      Žádosti o osobní údaje: Důvěryhodné instituce nikdy nepožadují citlivé informace prostřednictvím SMS." },
+            { "Jak se chránit": "·      Blokování neznámých čísel: Mnoho mobilních telefonů umožňuje blokování nebo filtrování neznámých čísel.\n·      Ověřování informací: Pokud máte pochybnosti, kontaktujte přímo instituci, která údajně zprávu poslala.\n·      Antivirový software: Udržujte svůj telefon chráněný aktualizovaným antivirovým softwarem." },
+            { "Podvodné telefonáty": "" },
+            { "Jak je rozpoznat": "Podvodníci se často vydávají za zástupce známých společností nebo institucí. Mohou vás požádat o osobní údaje, platby nebo vás zastrašovat.\n[[podvod_sms_2.png]]\n·      Neočekávané hovory: Buďte obezřetní, pokud dostanete hovor, který nečekáte.\n·      Žádosti o citlivé informace: Důvěryhodné firmy nikdy nebudou žádat citlivé údaje po telefonu.\n·      Výhrůžky a naléhavost: Podvodníci často vytvářejí pocit naléhavosti nebo vás zastrašují výhrůžkami." },
+            { "Jak se chránit": "·      Blokování čísel: Pokud dostanete podvodný hovor, zablokujte číslo.\n·      Prověřování informací: Zeptejte se na jméno a kontaktní údaje volajícího a ověřte je přímo u instituce.\n·      Nikdy neposkytujte citlivé informace: Nikdy neposkytujte osobní ani finanční údaje po telefonu." },
+            { "Podvodné emaily": "" },
+            { "Jak je rozpoznat": "Podvodné emaily často vypadají, jako by pocházely od důvěryhodných zdrojů, ale mohou obsahovat pravopisné chyby, neobvyklé adresy odesílatele nebo podezřelé odkazy.\n[[podvod_sms_3.png]]\n·      Pravopisné chyby: Důvěryhodné instituce obvykle posílají emaily bez chyb.\n·      Neobvyklé adresy odesílatele: Zkontrolujte emailovou adresu odesílatele.\n·      Podezřelé odkazy a přílohy: Nikdy neklikejte na odkazy a nepřipojujte přílohy z neznámých emailů." },
+            { "Jak se chránit": "·      Antivirový software: Používejte antivirový software a pravidelně ho aktualizujte.\n·      Prověřování emailů: Pokud máte pochybnosti, kontaktujte instituci přímo a ověřte, zda email pochází od nich.\n·      Neotevírejte podezřelé emaily: Pokud email vypadá podezřele, neotvírejte ho a nahlaste ho jako spam." },
+            { "Závěr": "Podvodné SMS zprávy, telefonáty a emaily mohou být velmi nebezpečné a mohou vést ke ztrátě osobních nebo finančních údajů. Buďte vždy obezřetní, ověřujte informace a nikdy neposkytujte citlivé informace prostřednictvím těchto kanálů. Pamatujte, že prevence je nejlepší obrana proti podvodům." }
+          ]
+        },
         "Základní bezpečnost na internetu pro seniory": {
           "image": "/media/guides/guides/bezpecnost_na_internetu.jpg",
           "content": [
-            { "": "((Jak se chránit v digitálním světě))" }
+            { "": "((Jak se chránit v digitálním světě))" },
+            { "": "Internet je skvělým nástrojem pro komunikaci, zábavu i získávání informací. Pro mnoho seniorů je však svět internetu novým a potenciálně nebezpečným místem. Tento článek poskytne základní rady a postupy, jak se na internetu bezpečně pohybovat." },
+            { "Silná hesla": "Jedním z nejdůležitějších kroků k ochraně osobních údajů na internetu je používání silných hesel. Heslo by mělo být složeno z kombinace velkých a malých písmen, čísel a speciálních znaků. Ideální délka hesla je minimálně osm znaků. Vyvarujte se používání jednoduchých hesel, jako je „123456“ nebo „password“." },
+            { "Ochrana osobních údajů": "Nikdy nesdílejte své osobní údaje, jako je rodné číslo, číslo bankovního účtu nebo hesla, přes internet, zejména na sociálních sítích nebo e-mailem. Buďte opatrní při vyplňování online formulářů a ujistěte se, že webová stránka, na které se nacházíte, je důvěryhodná." },
+            { "Aktualizace softwaru": "Pravidelné aktualizace operačního systému a programů jsou klíčové pro zabezpečení vašeho počítače. Aktualizace často obsahují opravy bezpečnostních chyb, které mohou být zneužity hackery. Zapněte automatické aktualizace, pokud je to možné." },
+            { "Antivirový program": "Instalace a pravidelná aktualizace antivirového programu je dalším důležitým krokem k ochraně vašeho počítače. Antivirové programy skenují váš počítač pro potenciální hrozby a chrání vás před malwarem, viry a dalšími škodlivými programy." },
+            { "Phishingové útoky": "Phishingové útoky jsou pokusy o získání vašich osobních údajů prostřednictvím podvodných e-mailů nebo webových stránek. Tyto útoky často vypadají jako legitimní komunikace od bank, obchodů nebo dokonce od přátel. Buďte opatrní při otevírání e-mailů od neznámých odesílatelů a nikdy neklikejte na odkazy nebo přílohy v podezřelých e-mailech." },
+            { "Bezpečné nakupování online": "Online nakupování je pohodlné, ale přináší také rizika. Nakupujte pouze na důvěryhodných webových stránkách a ujistěte se, že adresa stránky začíná „https“ a že je na stránce ikona zámku. To znamená, že připojení je zabezpečené. Nepoužívejte veřejné Wi-Fi sítě k nakupování online nebo k přístupu k citlivým informacím." },
+            { "Bezpečné používání sociálních sítí": "Sociální sítě jsou skvělým způsobem, jak zůstat v kontaktu s rodinou a přáteli, ale mohou být také zdrojem rizik. Buďte opatrní s tím, jaké informace sdílíte, a nastavte své účty tak, aby byly co nejvíce bezpečné. Používejte silná hesla a dvoufaktorovou autentizaci, pokud je dostupná." },
+            { "Osobní zodpovědnost a vzdělávání": "Konečně, nejdůležitějším krokem k bezpečnému používání internetu je osobní zodpovědnost a vzdělávání. Mějte na paměti, že internet je veřejný prostor, a buďte vždy obezřetní. Pravidelně se vzdělávejte o nových hrozbách a bezpečnostních opatřeních, abyste byli připraveni na potenciální rizika.\nDodržováním těchto základních rad můžete významně snížit riziko, že se stanete obětí online podvodu nebo útoku. Internet může být bezpečným a užitečným nástrojem, pokud k němu přistupujete s rozvahou a opatrností." }
           ]
         },
         "Základní pravidla pro bezpečné chování seniorů na internetu": {
           "image": "/media/guides/guides/pravidla_pro_bezpecne_chovani.png",
           "content": [
-            { "": "((Průvodce bezpečným a odpovědným používáním internetu pro seniory))" }
+            { "": "((Průvodce bezpečným a odpovědným používáním internetu pro seniory))" },
+            { "":  "Internet nabízí starším lidem mnoho příležitostí, jak zůstat v kontaktu s rodinou a přáteli, získat nové znalosti a dovednosti nebo jednoduše se bavit. Nicméně je důležité, aby senioři byli informováni o potenciálních rizicích a dodržovali základní pravidla pro bezpečné chování online." },
+            { "Základní pravidla":  "" },
+            { "1. Používejte silná hesla":  "Vytvořte silná a jedinečná hesla pro každou online službu. Silné heslo by mělo obsahovat kombinaci velkých a malých písmen, čísel a speciálních znaků. Vyhněte se používání běžných slov a osobních údajů, jako jsou jména nebo data narození." },
+            { "2. Buďte opatrní s osobními údaji":  "Nikdy nesdílejte osobní nebo citlivé informace, jako jsou čísla bankovních účtů, hesla nebo rodná čísla, na veřejných fórech nebo prostřednictvím e-mailů. Při zadávání osobních údajů na webových stránkách se ujistěte, že je stránka zabezpečená (URL začíná na \"https\" a je zobrazený symbol zámku)." },
+            { "3. Dávejte pozor na podezřelé e-maily a odkazy":  "Buďte obezřetní při otevírání e-mailů od neznámých odesílatelů nebo při klikání na odkazy v e-mailech a zprávách. Phishingové útoky jsou běžné a mohou vás oklamat k poskytnutí osobních údajů nebo stažení škodlivého software." },
+            { "4. Aktualizujte software a antivirové programy":  "Pravidelně aktualizujte svůj operační systém, prohlížeče a další software, aby byly chráněny před nejnovějšími hrozbami. Nainstalujte a pravidelně aktualizujte antivirový program, který bude váš počítač chránit před viry a malwarem." },
+            { "5. Nakupujte online pouze na důvěryhodných stránkách":  "Při online nákupech používejte pouze ověřené a důvěryhodné webové stránky. Před zadáním platebních údajů zkontrolujte recenze a hodnocení obchodu, a ujistěte se, že je stránka zabezpečená (URL začíná na \"https\")." },
+            { "6. Nastavte soukromí na sociálních sítích":  "Nastavte soukromí na svých sociálních sítích tak, aby omezilo přístup k vašim osobním informacím. Buďte obezřetní při přijímání žádostí o přátelství od neznámých osob a sdílejte pouze informace, které byste sdíleli veřejně." },
+            { "7. Buďte skeptičtí k příliš dobrým nabídkám":  "Pokud něco zní příliš dobře, aby to byla pravda, pravděpodobně to tak je. Buďte obezřetní u nabídek, které slibují snadný výdělek nebo mimořádné slevy, a ověřte si je před jakýmkoli závazkem." },
+            { "Závěr":  "Dodržování těchto základních pravidel může seniorům pomoci bezpečně užívat internet a vyhnout se potenciálním hrozbám. Informovanost a obezřetnost jsou klíčovými faktory pro bezpečné a příjemné online zkušenosti." }
+
           ]
         },
         "Základní pravidla při nakupování na internetu": {
           "image": "/media/guides/guides/nakupovani_na_internetu.png",
           "content": [
-            { "": "((Pravidla určená pro seniory))" }
+            { "": "((Pravidla určená pro seniory))" },
+            { "Bezpečnost na prvním místě":  "1.        Vyberte si důvěryhodné internetové obchody – Před nákupem si ověřte, zda má obchod dobré recenze a zda je dobře známý. Použijte vyhledávače a čtěte hodnocení ostatních zákazníků.\n2.        Chraňte své osobní údaje – Nikdy nezadávejte vaše osobní údaje, jako je rodné číslo nebo číslo bankovního účtu, na neznámých stránkách." },
+            { "Platby a transakce":  "1.        Používejte bezpečné způsoby platby – Platby kartou nebo přes zabezpečené platební brány (např. PayPal) jsou bezpečnější než převody na účet. Nikdy neplaťte předem na neznámých stránkách.\n2.        Kontrolujte výpisy z účtu – Pravidelně kontrolujte své bankovní výpisy a ujistěte se, že všechny transakce jsou v pořádku. Pokud zjistíte neobvyklé pohyby na účtu, ihned kontaktujte banku." },
+            { "Ověření a reklamace":  "1.        Ověřte si podmínky doručení a vrácení zboží – Před nákupem si prostudujte podmínky doručení, reklamace a vrácení zboží. Ujistěte se, že je možné zboží vrátit, pokud nebudete spokojeni.\n2.        Uchovejte si doklady o nákupu – Uložte si e-maily o potvrzení objednávky, faktury a další doklady. Tyto dokumenty vám pomohou při případných" },
+            { "Pozor na podvody":  "1.        Nereagujte na podezřelé e-maily a nabídky – Pokud obdržíte e-mail nebo zprávu s podezřelou nabídkou, nereagujte na ni a neklikejte na odkazy. Mohlo by jít o pokus o podvod.\n2.        Buďte obezřetní při nabídce „příliš dobré na to, aby to byla pravda“ – Pokud je nabídka až neuvěřitelně výhodná, zkontrolujte ji pečlivě. Může jít o podvod, jehož cílem je získat vaše peníze nebo osobní údaje." },
+            { "Vzdělávejte se":  "1.        Sledujte aktuální trendy a rady – Internetové prostředí se neustále mění. Sledujte rady a tipy od odborníků, jak se chránit při online nákupech.\n2.        Požádejte o pomoc – Pokud si nejste jisti, jak postupovat při online nákupech, požádejte o pomoc rodinu, přátele nebo odborníky." },
+            { "Závěr":  "Nakupování na internetu může být pohodlné a bezpečné, pokud dodržujete základní pravidla. Vždy buďte obezřetní a chraňte své osobní údaje." }
           ]
         },
         "Útok na bankovnictví pomocí telefonického rozhovoru": {
@@ -33,35 +89,14 @@
             { "Pro bankovní instituce": "·      Školení zaměstnanců: Pravidelné školení zaměstnanců o nejnovějších hrozbách a metodách sociálního inženýrství je klíčové pro zabezpečení citlivých informací a systémů.\n·      Bezpečnostní protokoly: Vytvořte a dodržujte přísné bezpečnostní protokoly, které zahrnují ověřování identity klientů a zaměstnanců při telefonických interakcích.\n·      Technologická řešení: Investujte do technologií, které mohou detekovat a blokovat spoofing a podezřelé hovory. Implementujte vícefaktorové ověřování pro přístup k bankovním účtům." },
             { "Závěr": "Telefonické útoky na bankovnictví jsou vážnou hrozbou, která vyžaduje vědomé a aktivní úsilí k ochraně. Informovanost a vzdělávání jsou klíčovými faktory, jak pro jednotlivce, tak pro bankovní instituce, aby se minimalizovaly rizika a důsledky těchto útoků. Vždy buďte obezřetní, ověřujte si informace a dodržujte bezpečnostní postupy, abyste se ochránili před podvodníky." }
           ]
-        },
-        "Základní pravidla bezpečného chování na sociálních sítích pro seniory": {
-          "image": "/media/guides/guides/bezpecnost_na_socialnich_sitich.jpg",
-          "content": [
-            { "": "((Bezpečné a zodpovědné sdílení informací na internetu))" }
-          ]
         }
       }
     ]
   },
   "Recepty": {
-    "image": "/media/guides/categories/category1.jpg",
+    "image": "/media/guides/categories/cooking.jpg",
     "guides": [
-      {
-        "navod3": {
-          "image": "/media/guides/guides/guide1.jpg",
-          "content": [
-            { "nadpis1": "text" },
-            { "nadpis2": "text" }
-          ]
-        },
-        "navod4": {
-          "image": "/media/guides/guides/guide1.jpg",
-          "content": [
-            { "nadpis1": "text" },
-            { "nadpis2": "text" }
-          ]
-        }
-      }
+
     ]
   }
 }
