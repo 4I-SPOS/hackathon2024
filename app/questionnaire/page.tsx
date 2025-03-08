@@ -243,7 +243,7 @@ export default function Home()
         return(
             <div className="p-10 w-full h-[90vh]">
                 <div className="w-full h-full flex flex-col items-center justify-start">
-                    <div className="text-5xl mb-8 flex flex-row justify-center justify-items-center">
+                    <div className="text-5xl mb-8 text-center font-bold leading-[4rem] flex flex-row justify-center justify-items-center">
                         { questions[currentQuestionID].question }
                     </div>
                     <div className="h-full flex flex-col justify-center align-middle items-center">
