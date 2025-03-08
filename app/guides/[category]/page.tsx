@@ -17,6 +17,9 @@ export default async function Home({params}: { params: Promise<{ category: strin
 
     return(
         <div className="p-10">
+            <div className="text-5xl font-bold text-center p-5">
+                {decodeURI(category)}
+            </div>
             <GuideList category={category} guides={guides} />
         </div>
     );
