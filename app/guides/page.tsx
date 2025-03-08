@@ -14,7 +14,7 @@ export default function Home()
 {
     return(
         <div className="p-10">
-            <div className="flex flex-row justify-center items-center justify-items-center align-middle text-5xl font-bold">
+            <div className="flex flex-row justify-center items-center justify-items-center align-middle text-5xl py-10 font-bold">
                 Návody
             </div>
             <CategoryList categories={categories} />
