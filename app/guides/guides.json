@@ -3,9 +3,28 @@
     "image": "/media/guides/categories/category1.jpg",
     "guides": [
       {
-        "Útok na bankovnictví pomocí telefonického rozhovoru": {
-          "image": "/media/guides/guides/guide1.jpg",
+        "Základní bezpečnost na internetu pro seniory": {
+          "image": "/media/guides/guides/bezpecnost_na_internetu.jpg",
           "content": [
+            { "": "((Jak se chránit v digitálním světě))" }
+          ]
+        },
+        "Základní pravidla pro bezpečné chování seniorů na internetu": {
+          "image": "/media/guides/guides/pravidla_pro_bezpecne_chovani.png",
+          "content": [
+            { "": "((Průvodce bezpečným a odpovědným používáním internetu pro seniory))" }
+          ]
+        },
+        "Základní pravidla při nakupování na internetu": {
+          "image": "/media/guides/guides/nakupovani_na_internetu.png",
+          "content": [
+            { "": "((Pravidla určená pro seniory))" }
+          ]
+        },
+        "Útok na bankovnictví pomocí telefonického rozhovoru": {
+          "image": "/media/guides/guides/utok_na_bankovnictvi.jpg",
+          "content": [
+            { "": "((Metody sociálního inženýrství v kybernetické bezpečnosti))" },
             { "": "Útoky na bankovnictví pomocí telefonických rozhovorů jsou stále častější a sofistikovanější. Tento typ útoku spadá do kategorie sociálního inženýrství, kdy útočníci zneužívají lidskou důvěřivost a zvědavost k získání citlivých informací. V následujícím textu se podíváme na jednotlivé kroky, které útočníci podnikají, aby úspěšně provedli telefonický útok na bankovní klienty." },
             { "Co je telefonický útok?": "Telefonický útok, často známý jako vishing (voice phishing), je metoda, při které útočníci využívají telefonních hovorů k získání osobních, finančních nebo bezpečnostních informací od obětí. Tyto útoky mohou být zaměřeny na jednotlivce, ale také na zaměstnance bankovních institucí, aby útočníci získali přístup k interním systémům a údajům." },
             { "Fáze telefonického útoku": "·      Příprava: Útočníci zahajují svou kampaň sběrem informací o své oběti z veřejně dostupných zdrojů, jako jsou sociální sítě, webové stránky nebo databáze. Čím více informací o oběti mají, tím důvěryhodněji mohou vystupovat.\n·      Navázání kontaktu: Útočníci kontaktují oběť telefonicky a představí se jako zaměstnanci banky nebo jiných důvěryhodných institucí. Často využívají techniky, jako je spoofing, kdy dokážou zfalšovat své telefonní číslo, aby vypadalo, že volají z banky.\n·      Manipulace: V této fázi útočníci využívají různé psychologické taktiky, aby oběť přesvědčili k poskytnutí citlivých informací. Mohou například tvrdít, že na účtu oběti byly zaznamenány podezřelé transakce a že je nutné okamžitě ověřit totožnost oběti.\n·      Získání informací: Jakmile oběť důvěřuje útočníkovi, je požádána o sdělení svých bankovních údajů, hesel nebo jiných citlivých informací. Útočníci mohou také požádat o instalaci škodlivého softwaru na zařízení oběti, aby získali širší přístup k jejímu bankovnímu účtu.\n·      Využití informací: Po získání potřebných údajů útočníci využívají tyto informace k přístupu k bankovním účtům oběti a provádění neoprávněných transakcí. Někdy se tyto útoky kombinují s dalšími metodami, jako je phishing prostřednictvím e-mailu nebo textových zpráv." },
@@ -15,17 +34,16 @@
             { "Závěr": "Telefonické útoky na bankovnictví jsou vážnou hrozbou, která vyžaduje vědomé a aktivní úsilí k ochraně. Informovanost a vzdělávání jsou klíčovými faktory, jak pro jednotlivce, tak pro bankovní instituce, aby se minimalizovaly rizika a důsledky těchto útoků. Vždy buďte obezřetní, ověřujte si informace a dodržujte bezpečnostní postupy, abyste se ochránili před podvodníky." }
           ]
         },
-        "navod2": {
-          "image": "/media/guides/guides/guide1.jpg",
+        "Základní pravidla bezpečného chování na sociálních sítích pro seniory": {
+          "image": "/media/guides/guides/bezpecnost_na_socialnich_sitich.jpg",
           "content": [
-            { "nadpis1": "text" },
-            { "nadpis2": "text" }
+            { "": "((Bezpečné a zodpovědné sdílení informací na internetu))" }
           ]
         }
       }
     ]
   },
-  "kategorie2": {
+  "Recepty": {
     "image": "/media/guides/categories/category1.jpg",
     "guides": [
       {

@@ -26,7 +26,7 @@ export function GuideList(props: {category: string, guides: { name: string, imag
                                     style={{ width: '100%', height: 'auto', margin: "0" }}
                                 />
                                 <span className="text-center text-balance w-full py-1 px-3 text-2xl">
-                            <div className="font-bold">
+                            <div className="font-bold flex flex-row items-center align-middle justify-items-center justify-center">
                                 {guide.name}
                             </div>
                         </span>
