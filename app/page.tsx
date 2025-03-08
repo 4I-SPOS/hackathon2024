@@ -6,7 +6,8 @@ import Link from "next/link";
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import bgSrc from "@/app/assets/home_bg.jpg";
-import scrollAnim from "@/app/assets/scroll.gif"; // Import the scroll animation GIF
+import scrollAnim from "@/app/assets/scroll.gif";
+import CarouselLanding from "./components/carousel";
 
 interface NewsItem {
     title: string;
@@ -14,6 +15,7 @@ interface NewsItem {
     imgSrc: string;
     link: string;
 }
+
 
 export default function Home() {
     const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
@@ -130,14 +132,7 @@ export default function Home() {
                 </div>
             )}
 
-            <div ref={uvodRef} className="h-[70vh] overflow-hidden relative flex items-center">
-                <div className="z-10 py-10 px-24 flex flex-col gap-5">
-                    <h1 className="text-white text-5xl font-bold">Portál seniora</h1>
-                    <p className="text-white w-1/3">Vítejte na webu pro seniory! Najdete zde novinky, tipy na výlety a aktivity. Díky našemu chytrému systému vám doporučíme obsah na míru podle vašich zájmů!</p>
-                </div>
-                <Image src={bgSrc} alt={""} className="absolute top-[-10rem]"></Image>
-                <div className="absolute i-bg-gradient w-full h-full"></div>
-            </div>
+            <CarouselLanding />
 
             <div ref={dotaznikRef}>
                 <div className="flex items-center flex-col">
