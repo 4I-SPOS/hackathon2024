@@ -16,11 +16,26 @@ interface NewsItem {
     link: string;
 }
 
+interface NameDayData {
+    date: string;
+    dayNumber: string;
+    dayInWeek: string;
+    monthNumber: string;
+    month: {
+        nominative: string;
+        genitive: string;
+    };
+    year: string;
+    name: string;
+    isHoliday: boolean;
+    holidayName: string | null;
+}
 
 export default function Home() {
     const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
     const [showFixedDiv, setShowFixedDiv] = useState(false);
     const [activeSection, setActiveSection] = useState("Úvod");
+    const [nameDay, setNameDay] = useState<string>("");
 
     // Create refs for each section
     const uvodRef = useRef<HTMLDivElement>(null);
@@ -89,6 +104,20 @@ export default function Home() {
 
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    useEffect(() => {
+        async function fetchNameDay() {
+            try {
+                const response = await fetch("https://svatkyapi.cz/api/day");
+                const data: NameDayData = await response.json();
+                setNameDay(data.name);
+            } catch (error) {
+                console.error("Error fetching name day data", error);
+            }
+        }
+
+        fetchNameDay();
     }, []);
 
     const scrollToSection = (section: string) => {
@@ -169,8 +198,8 @@ export default function Home() {
             </div>
 
             <div ref={svatekRef} className="w-full flex py-10 flex-col items-center gap-20">
-                <div className="text-5xl font-bold">Dnes má svátek Renata</div>
-                <p className="text-2xl text-neutral-500 w-1/3 text-center">Pokud znáte nějakou renatu, popřejte ji všechno nejlepší k svátku. Určitě jí to udělá radost!</p>
+                <div className="text-5xl font-bold">Dnes má svátek {nameDay}</div>
+                <p className="text-2xl text-neutral-500 w-1/3 text-center">Pokud znáte nějakou {nameDay}, popřejte ji všechno nejlepší k svátku. Určitě jí to udělá radost!</p>
             </div>
 
             <div ref={podniknoutRef} className="flex flex-col gap-20 w-full px-64 justify-center py-32">
