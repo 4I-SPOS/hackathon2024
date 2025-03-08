@@ -5,7 +5,6 @@ import NewsCard from "./components/NewsCard";
 import Link from "next/link";
 import { Button } from "@heroui/react";
 import Image from "next/image";
-import bgSrc from "@/app/assets/home_bg.jpg";
 import scrollAnim from "@/app/assets/scroll.gif";
 import CarouselLanding from "./components/carousel";
 
@@ -160,7 +159,7 @@ export default function Home() {
                     </div>
                 </div>
             )}
-
+            <div ref={uvodRef}></div>
             <CarouselLanding />
 
             <div ref={dotaznikRef}>
@@ -177,7 +176,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div ref={novinkyRef} className="w-full px-64 pb-20">
+            <div ref={novinkyRef} className="w-full px-64 pb-5">
                 <div className="flex flex-col gap-14">
                     <h1 className="font-bold text-4xl text-center ">Zkoukňete co se děje v Česku</h1>
                     <div className="flex gap-6 ">
@@ -197,9 +196,9 @@ export default function Home() {
                 </div>
             </div>
 
-            <div ref={svatekRef} className="w-full flex py-10 flex-col items-center gap-20">
+            <div ref={svatekRef} className="w-full flex pb-10 pt-36 flex-col items-center gap-20">
                 <div className="text-5xl font-bold">Dnes má svátek {nameDay}</div>
-                <p className="text-2xl text-neutral-500 w-1/3 text-center">Pokud znáte nějakou {nameDay}, popřejte ji všechno nejlepší k svátku. Určitě jí to udělá radost!</p>
+                <p className="text-2xl text-neutral-500 w-1/3 text-center">Pokud znáte někoho jménem {nameDay}, popřejte jim všechno nejlepší k svátku. Určitě jim to udělá radost!</p>
             </div>
 
             <div ref={podniknoutRef} className="flex flex-col gap-20 w-full px-64 justify-center py-32">
